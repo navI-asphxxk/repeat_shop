@@ -18,11 +18,12 @@ def main_menu():
     info = types.KeyboardButton(text='📢Информация')
     helping = types.KeyboardButton(text='❓Помощь в выборе')
     katalog = types.KeyboardButton(text='🛍️Каталог')
-    feedback = types.KeyboardButton(text='📩Отзывы')
+    feedback = types.KeyboardButton(text='📩Ваши предложения')
+    media = types.KeyboardButton(text='🔗Наша группа')
 
-    keyboard_menu.add(info)
-    keyboard_menu.add(helping, katalog)
-    keyboard_menu.add(feedback)
+    keyboard_menu.add(info, helping)
+    keyboard_menu.add(katalog)
+    keyboard_menu.add(feedback, media)
 
     return keyboard_menu
 
@@ -30,28 +31,75 @@ def main_menu():
 def katalog_menu():
     # Кол-во позиций в меню клавиатуры - много
     katalog_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
-    shoes = types.KeyboardButton(text='Обувь')
-    clothes = types.KeyboardButton(text='Одежда')
-    accessories = types.KeyboardButton(text='Аксессуары')
-    back = types.KeyboardButton(text='Назад')
+    nike = types.KeyboardButton(text='👟Nike')
+    adidas = types.KeyboardButton(text='Adidas')
+    reebok = types.KeyboardButton(text='Reebok👟')
+    converse = types.KeyboardButton(text='👟Converse👟')
+    back = types.KeyboardButton(text='🔙Назад в главное меню')
 
-    katalog_menu.add(shoes, clothes, accessories)
+    katalog_menu.add(nike, adidas, reebok)
+    katalog_menu.add(converse)
     katalog_menu.add(back)
 
     return katalog_menu
 
 
+def menu_nike():
+    nike_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
+    force = types.KeyboardButton(text='Air Force 1 low')
+    monarch = types.KeyboardButton(text='Air Monarch')
+    m2k = types.KeyboardButton(text='M2K Tekno')
+    back = types.KeyboardButton(text='🔙Назад к категориям')
+
+    nike_menu.add(force, monarch, m2k)
+    nike_menu.add(back)
+
+    return nike_menu
+
+
+def menu_adidas():
+    adidas_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
+    forum = types.KeyboardButton(text='Forum 84 low')
+    ozweego = types.KeyboardButton(text='Ozweego')
+    boost = types.KeyboardButton(text='Yeezy Boost 350')
+    back = types.KeyboardButton(text='🔙Назад к категориям')
+
+    adidas_menu.add(forum, ozweego, boost)
+    adidas_menu.add(back)
+
+    return adidas_menu
+
+def menu_reebok():
+    reebok_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
+    forum = types.KeyboardButton(text='Forum 84 low')
+    ozweego = types.KeyboardButton(text='Ozweego')
+    boost = types.KeyboardButton(text='Yeezy Boost 350')
+    back = types.KeyboardButton(text='🔙Назад к категориям')
+
+    reebok_menu.add(forum, ozweego, boost)
+    reebok_menu.add(back)
+
+    return reebok_menu
+
+def menu_converse():
+    converse_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
+    forum = types.KeyboardButton(text='Forum 84 low')
+    ozweego = types.KeyboardButton(text='Ozweego')
+    boost = types.KeyboardButton(text='Yeezy Boost 350')
+    back = types.KeyboardButton(text='🔙Назад к категориям')
+
+    converse_menu.add(forum, ozweego, boost)
+    converse_menu.add(back)
+
+    return converse_menu
+
+
 @bot.message_handler(commands=['start'])
 def start(message):
-
     photo = open('photoPrivet.jpg', 'rb')
     bot.send_photo(message.chat.id, photo, reply_markup=main_menu())
 
-    bot.send_message(message.chat.id, '<b>мы занимаемся доставкой оригинальной продукции '
-                                      'всех самых популярных брендов: Nike, Adidas, Jordan, Gucci, '
-                                      'Balenciaga и др. - с магазина Poizon. При нынешних ограничениях '
-                                      'достать оригинальный товар проблематично, поэтому мы предоставляем '
-                                      'свои услуги по низким ценам.</b>',
+    bot.send_message(message.chat.id, '<b>privet</b>',
                      parse_mode='html', reply_markup=main_menu())
 
 
@@ -101,10 +149,7 @@ def get_text(message):
 
         # кнопка отмены, чтобы не спамить, удаляет 2 сообщения
 
-        bot.send_message(message.chat.id, text='<b>1.	Что такое POIZON и зачем заказывать из Китая?</b>\n'
-                                               'POIZON(DeWu)- китайский магазин ОРИГИНАЛЬНЫХ брендов. '
-                                               'При нынешних введенных ограничениях, это звучит очень интересно,'
-                                               ' а учитывая стоимость, которая НИЖЕ чем в РФ НА 30-40%...',
+        bot.send_message(message.chat.id, text='<b>info</b>',
                          parse_mode='html', reply_markup=info)
 
     if message.text == '❓Помощь в выборе':
@@ -114,7 +159,7 @@ def get_text(message):
         bot.send_message(message.chat.id, text='<i>Помощь в выборе товара -</i>\n'
                                                ' @asphxxk', parse_mode='html', reply_markup=helping)
 
-    if message.text =='📩Отзывы':
+    if message.text == '📩Отзывы':
         feedback = types.InlineKeyboardMarkup()
         feed = types.InlineKeyboardButton("Отзывы", url="https://otzovik.com/lastreviews")
         cancel = types.InlineKeyboardButton("❌Отмена", callback_data="cancel")
@@ -131,26 +176,31 @@ def get_text(message):
         bot.send_message(message.chat.id, text='Каталог товаров',
                          parse_mode='html')
 
-    if message.text == 'Назад':
-        # категории в каталоге в меню клавиатуры, прикреплены к фото
-
+    if message.text == '🔙Назад в главное меню':
         bot.send_message(message.chat.id, text='back',
                          parse_mode='html', reply_markup=main_menu())
 
-    if message.text == 'Обувь':
-        text_pages.text_shoes_pages(message)
+    if message.text == '🔙Назад к категориям':
+        bot.send_message(message.chat.id, text='back',
+                         parse_mode='html', reply_markup=katalog_menu())
 
-    if message.text == 'Одежда':
-        text_pages.text_clothes_pages(message)
+    if message.text == '👟Nike':
+        photo = open('pages/nike/nike.jpg', 'rb')
+        bot.send_photo(message.chat.id, photo, reply_markup=menu_nike())
 
-    if message.text == 'Аксессуары':
-        text_pages.text_accesory_pages(message)
+    if message.text == 'Adidas':
+        photo = open('pages/adidas/adidas.jpg', 'rb')
+        bot.send_photo(message.chat.id, photo, reply_markup=menu_adidas())
 
+    if message.text == 'Reebok👟':
+        photo = open('pages/reebok/reebok.jpg', 'rb')
+        bot.send_photo(message.chat.id, photo, reply_markup=menu_reebok())
 
-# def callback_shoes_pages(call):
+    if message.text =='👟Converse👟':
+        photo = open('pages/converse', 'rb')
+        bot.send_photo(message.chat.id, photo, reply_markup=menu_converse())
 
-
-# def start_shoes_pages(m):
-
+    if message.text == 'Air Force 1 low':
+        text_pages.text_nike_force_pages(message)
 
 bot.polling(none_stop=True)
