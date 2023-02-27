@@ -69,6 +69,7 @@ def menu_adidas():
 
     return adidas_menu
 
+
 def menu_reebok():
     reebok_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
     forum = types.KeyboardButton(text='Forum 84 low')
@@ -80,6 +81,7 @@ def menu_reebok():
     reebok_menu.add(back)
 
     return reebok_menu
+
 
 def menu_converse():
     converse_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
@@ -125,9 +127,9 @@ def check_callback_data(call):
             bot.delete_message(call.message.chat.id, call.message.message_id - 1)
             bot.send_message(call.message.chat.id, text='cancel', parse_mode='html', reply_markup=keyboard_menu)
 
-        callback_pages.callback_shoes_pages(call)
-        callback_pages.callback_clothes_pages(call)
-        callback_pages.callback_accesory_pages(call)
+        callback_pages.callback_nike_force_pages(call)
+        callback_pages.callback_nike_monarch_pages(call)
+        callback_pages.callback_nike_m2k_pages(call)
 
         if call.data == "buy":
             bot.send_message(call.message.chat.id,
@@ -181,6 +183,7 @@ def get_text(message):
                          parse_mode='html', reply_markup=main_menu())
 
     if message.text == '🔙Назад к категориям':
+        #bot.delete_message(message.chat.id, message.message_id - 1)
         bot.send_message(message.chat.id, text='back',
                          parse_mode='html', reply_markup=katalog_menu())
 
@@ -196,11 +199,12 @@ def get_text(message):
         photo = open('pages/reebok/reebok.jpg', 'rb')
         bot.send_photo(message.chat.id, photo, reply_markup=menu_reebok())
 
-    if message.text =='👟Converse👟':
+    if message.text == '👟Converse👟':
         photo = open('pages/converse', 'rb')
         bot.send_photo(message.chat.id, photo, reply_markup=menu_converse())
 
     if message.text == 'Air Force 1 low':
         text_pages.text_nike_force_pages(message)
+
 
 bot.polling(none_stop=True)

@@ -1,6 +1,6 @@
 # Вбивается База данных вручную
 
-shoes_name_pages = ["adidas forum low - Pink",
+nike_force_name_pages = ["adidas forum low - Pink",
                     "Nike air force",
                     "asfasf",
                     "aags",
@@ -12,7 +12,7 @@ shoes_name_pages = ["adidas forum low - Pink",
                     "ew",
                     "ыпы"]
 
-shoes_price_pages = [10,
+nike_force_price_pages = [10,
                      15,
                      20,
                      25,
@@ -24,14 +24,14 @@ shoes_price_pages = [10,
                      0,
                      0]
 
-clothes_name_pages = ["Стоник поношенный",
+nike_monarch_name_pages = ["Стоник поношенный",
                       "Стоник не поношенный"]
 
-clothes_price_pages = [999999999,
+nike_monarch_price_pages = [999999999,
                        1]
 
-accesory_name_pages = ["Цепь арго мужская",
+nike_m2k_name_pages = ["Цепь арго мужская",
                       "Крест доминика Торето - никогда не отворачивайся от семьи"]
 
-accesory_price_pages = [1000,
+nike_m2k_price_pages = [1000,
                         500]

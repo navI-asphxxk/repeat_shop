@@ -49,14 +49,14 @@ def callback_nike_force_pages(call):
                                                 page + 1) + ",\"CountPage\":" + str(count) + "}"))
 
         markup.add(
-            InlineKeyboardButton(text=f'{data.shoes_price_pages[page - 1]}руб - Купить', callback_data='buy'))
+            InlineKeyboardButton(text=f'{data.nike_force_price_pages[page - 1]}руб - Купить', callback_data='buy'))
         # bot.edit_message_text(f' {data.shoes_name_pages[page-1]} ', reply_markup=markup, chat_id=call.message.chat.id,
         #                      message_id=call.message.message_id)
 
         try:
             bot.edit_message_media(media=telebot.types.InputMedia(type='photo',
                                                                   media=open(f'pages/nike/force/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.shoes_name_pages[page - 1]}'),
+                                                                  caption=f'{data.nike_force_name_pages[page - 1]}'),
                                    reply_markup=markup,
                                    chat_id=call.message.chat.id, message_id=call.message.message_id)
         except Exception as ex:
@@ -106,12 +106,12 @@ def callback_nike_monarch_pages(call):
                                                 page + 1) + ",\"CountPage\":" + str(count) + "}"))
 
         markup.add(
-            InlineKeyboardButton(text=f'{data.accesory_price_pages[page - 1]}руб - Купить', callback_data='buy'))
+            InlineKeyboardButton(text=f'{data.nike_monarch_price_pages[page - 1]}руб - Купить', callback_data='buy'))
 
         try:
             bot.edit_message_media(media=telebot.types.InputMedia(type='photo',
                                                                   media=open(f'pages/nike/monarch/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.accesory_name_pages[page - 1]}'),
+                                                                  caption=f'{data.nike_monarch_name_pages[page - 1]}'),
                                    reply_markup=markup,
                                    chat_id=call.message.chat.id, message_id=call.message.message_id)
         except Exception as ex:
@@ -161,12 +161,12 @@ def callback_nike_m2k_pages(call):
                                                 page + 1) + ",\"CountPage\":" + str(count) + "}"))
 
         markup.add(
-            InlineKeyboardButton(text=f'{data.clothes_price_pages[page - 1]}руб - Купить', callback_data='buy'))
+            InlineKeyboardButton(text=f'{data.nike_m2k_price_pages[page - 1]}руб - Купить', callback_data='buy'))
 
         try:
             bot.edit_message_media(media=telebot.types.InputMedia(type='photo',
                                                                   media=open(f'pages/nike/m2k/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.clothes_name_pages[page - 1]}'),
+                                                                  caption=f'{data.nike_m2k_name_pages[page - 1]}'),
                                    reply_markup=markup,
                                    chat_id=call.message.chat.id, message_id=call.message.message_id)
         except Exception as ex:
