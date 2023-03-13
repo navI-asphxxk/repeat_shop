@@ -80,7 +80,7 @@ def get_text(message):
         cancel = types.InlineKeyboardButton("❌Отмена", callback_data="cancel")
         helping.add(cancel)
         bot.send_message(message.chat.id, text='<i>Помощь в выборе товара -</i>\n'
-                                               ' @asphxxk', parse_mode='html', reply_markup=helping)
+                                               '@asphxxk', parse_mode='html', reply_markup=helping)
 
     if message.text == '📩Отзывы':
         feedback = types.InlineKeyboardMarkup()
@@ -132,7 +132,7 @@ def get_text(message):
         photo = open('pages/New balance/new balance.png', 'rb')
         bot.send_photo(message.chat.id, photo, reply_markup=menu_nb())
 
-    if message.text == 'Air Force 1 low':
+    if message.text == 'Air Force 1 Low':
         text_pages.text_nike_force_pages(message)
 
     if message.text == 'Air Monarch':

@@ -35,3 +35,45 @@ nike_m2k_name_pages = ["Цепь арго мужская",
 
 nike_m2k_price_pages = [1000,
                         500]
+
+nike_dunk_high_name_pages = ["1",
+                      "2"]
+
+nike_dunk_high_price_pages = [0,
+                        0]
+
+nike_dunk_low_name_pages = ["1",
+                      "2"]
+
+nike_dunk_low_price_pages = [0,
+                        0]
+
+nike_plus_name_pages = ["1",
+                      "2"]
+
+nike_plus_price_pages = [0,
+                        0]
+
+nike_vapormax_name_pages = ["1",
+                      "2"]
+
+nike_vapormax_price_pages = [0,
+                        0]
+
+nike_97_name_pages = ["1",
+                      "2"]
+
+nike_97_price_pages = [0,
+                        0]
+
+nike_95_name_pages = ["1",
+                      "2"]
+
+nike_95_price_pages = [0,
+                        0]
+
+nike_720_name_pages = ["1",
+                      "2"]
+
+nike_720_price_pages = [0,
+                        0]

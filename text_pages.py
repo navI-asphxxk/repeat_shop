@@ -19,7 +19,6 @@ def text_nike_force_pages(message):
 
     bot.send_photo(message.chat.id, open(f'pages/nike/force/{page}.jpg', 'rb'),
                    caption=f'{data.nike_force_name_pages[0]}', reply_markup=markup)
-    # bot.send_message(message.from_user.id, f'{data.shoes_name_pages[0]}', reply_markup=markup)
 
 
 def text_nike_monarch_pages(message):
