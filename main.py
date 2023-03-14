@@ -30,8 +30,35 @@ def send_to_adm_chat_buy(call):
                           'Если у Вас возникли проблемы, обратитесь в тех. поддержку',
                      parse_mode='html')
 
+
+# Запись информации юзера в файл
+def file_user_info(username, uid):
+    file = open('info_users/users_repeation.txt', 'a')
+    file.write("Username: {}, id: {}\n".format(username, uid))
+
+    file.close()
+
+def delete_repeation():
+    outputFile = open('info_users/users.txt', "w")
+
+    inputFile = open('info_users/users_repeation.txt', "r")
+
+    lines_seen_so_far = set()
+
+    for line in inputFile:
+
+        if line not in lines_seen_so_far:
+            outputFile.write(line)
+
+            lines_seen_so_far.add(line)
+
+    inputFile.close()
+    outputFile.close()
+
 @bot.message_handler(commands=['start'])
 def start(message):
+    file_user_info(message.from_user.username, message.from_user.id)
+    delete_repeation()
 
     photo = open('photoPrivet.jpg', 'rb')
     bot.send_photo(message.chat.id, photo, reply_markup=main_menu())
