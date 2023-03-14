@@ -1,10 +1,11 @@
 import telebot
 from telebot.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
+from config import BOT_TOKEN
 
 import data
 import json
 
-bot = telebot.TeleBot('5873814230:AAGfDLmGCzWNFexqkAmPNm4pvEIv2GTYy9M')
+bot = telebot.TeleBot(BOT_TOKEN)
 
 
 def callback_nike_force_pages(call):
@@ -32,7 +33,7 @@ def callback_nike_force_pages(call):
                                             callback_data="{\"method\":\"force\",\"NumberPage\":" + str(
                                                 page + 1) + ",\"CountPage\":" + str(count) + "}"))
 
-        # markup для второй страницы
+        # markup для последней страницы
         elif page == count:
             markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
                                             callback_data="{\"method\":\"force\",\"NumberPage\":" + str(
@@ -50,7 +51,8 @@ def callback_nike_force_pages(call):
                                                 page + 1) + ",\"CountPage\":" + str(count) + "}"))
 
         markup.add(                    # data цены
-            InlineKeyboardButton(text=f'{data.nike_force_price_pages[page - 1]}руб - Купить', callback_data='buy'))
+            InlineKeyboardButton(text=f'{data.nike_force_price_pages[page - 1]}руб - Купить',
+                                 callback_data='buy'))
         # bot.edit_message_text(f' {data.shoes_name_pages[page-1]} ', reply_markup=markup, chat_id=call.message.chat.id,
         #                      message_id=call.message.message_id)
 

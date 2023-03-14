@@ -1,0 +1,4 @@
+BOT_TOKEN = '5873814230:AAGfDLmGCzWNFexqkAmPNm4pvEIv2GTYy9M'
+team_id = '-965647443'
+admin_id = '577235663'
+

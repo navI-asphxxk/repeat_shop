@@ -1,9 +1,10 @@
 import telebot
 from telebot.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
+from config import BOT_TOKEN
 
 import data
 
-bot = telebot.TeleBot('5873814230:AAGfDLmGCzWNFexqkAmPNm4pvEIv2GTYy9M')
+bot = telebot.TeleBot(BOT_TOKEN)
 
 
 def text_nike_force_pages(message):

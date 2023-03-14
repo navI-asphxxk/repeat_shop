@@ -2,23 +2,37 @@ import telebot
 from telebot import types
 from menues import main_menu, katalog_menu, menu_nike, menu_adidas, menu_reebok
 from menues import menu_converse, menu_jordan, menu_nb
-from telebot.types import ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton
+from config import BOT_TOKEN, team_id
 
-import json
-
-from telegram_bot_pagination import InlineKeyboardPaginator
+import random
 
 import callback_pages
 import text_pages
 
-bot = telebot.TeleBot('5873814230:AAGfDLmGCzWNFexqkAmPNm4pvEIv2GTYy9M')
+bot = telebot.TeleBot(BOT_TOKEN)
 
 
+def send_to_adm_chat_buy(call):
+    id_buying = random.randint(10000000, 99999999)
 
+    bot.forward_message(chat_id=team_id, from_chat_id=call.message.chat.id,
+                        message_id=call.message.id)
 
+    bot.send_message(chat_id=team_id,
+                     text=f'Уникальный id <b>{id_buying}</b>.\n'
+                          f'Клиент - @{call.from_user.username}',
+                     parse_mode='html')
+
+    bot.send_message(call.message.chat.id,
+                     text=f'Заявка на заказ успешно оформлена!\n'
+                          f'Уникальный id <b>{id_buying}</b>. С Вами свяжутся в ближайшее время\n'
+                          '\n'
+                          'Если у Вас возникли проблемы, обратитесь в тех. поддержку',
+                     parse_mode='html')
 
 @bot.message_handler(commands=['start'])
 def start(message):
+
     photo = open('photoPrivet.jpg', 'rb')
     bot.send_photo(message.chat.id, photo, reply_markup=main_menu())
 
@@ -53,10 +67,8 @@ def check_callback_data(call):
         callback_pages.callback_nike_m2k_pages(call)
 
         if call.data == "buy":
-            bot.send_message(call.message.chat.id,
-                             text='<b>тиньк</b> 12345678\n'
-                                  'после оплаты - @asphxxk',
-                             parse_mode='html')
+            send_to_adm_chat_buy(call)
+
 
 
 @bot.message_handler(content_types=['text'])
