@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 from menues import main_menu, katalog_menu, menu_nike, menu_adidas, menu_reebok
 from menues import menu_converse, menu_jordan, menu_nb
-from config import BOT_TOKEN, team_id
+from config import BOT_TOKEN, team_id, error_message, admin_id
 
 import random
 
@@ -11,30 +11,38 @@ import text_pages
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
+#отправка ошибки в чат и админам
+def send_error(call, adm_mess):
+    bot.send_message(call.message.chat.id, text=error_message)
+
+    bot.send_message(chat_id=admin_id, text=adm_mess)
 
 def send_to_adm_chat_buy(call):
     id_buying = random.randint(10000000, 99999999)
+    try:
+        bot.forward_message(chat_id=team_id, from_chat_id=call.message.chat.id,
+                            message_id=call.message.id)
 
-    bot.forward_message(chat_id=team_id, from_chat_id=call.message.chat.id,
-                        message_id=call.message.id)
+        bot.send_message(chat_id=team_id,
+                         text=f'Уникальный id <b>{id_buying}</b>.\n'
+                              f'Клиент - @{call.from_user.username}',
+                         parse_mode='html')
 
-    bot.send_message(chat_id=team_id,
-                     text=f'Уникальный id <b>{id_buying}</b>.\n'
-                          f'Клиент - @{call.from_user.username}',
-                     parse_mode='html')
+        bot.send_message(call.message.chat.id,
+                         text=f'Заявка на заказ успешно оформлена!\n'
+                              f'Уникальный id <b>{id_buying}</b>. С Вами свяжутся в ближайшее время\n'
+                              '\n'
+                              'Если у Вас возникли проблемы, обратитесь в тех. поддержку',
+                         parse_mode='html')
 
-    bot.send_message(call.message.chat.id,
-                     text=f'Заявка на заказ успешно оформлена!\n'
-                          f'Уникальный id <b>{id_buying}</b>. С Вами свяжутся в ближайшее время\n'
-                          '\n'
-                          'Если у Вас возникли проблемы, обратитесь в тех. поддержку',
-                     parse_mode='html')
+    except:
+        send_error(call, 'Возникла ошибка в создании заказа')
 
 
 # Запись информации юзера в файл
 def file_user_info(username, uid):
     file = open('info_users/users_repeation.txt', 'a')
-    file.write("Username: {}, id: {}\n".format(username, uid))
+    file.write(f"Username: {username}, id: {uid}\n")
 
     file.close()
 
@@ -59,6 +67,7 @@ def delete_repeation():
 
 @bot.message_handler(commands=['start'])
 def start(message):
+    # Запись инфы о пользователях бота
     file_user_info(message.from_user.username, message.from_user.id)
     delete_repeation()
 
