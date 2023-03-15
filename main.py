@@ -38,6 +38,7 @@ def file_user_info(username, uid):
 
     file.close()
 
+
 def delete_repeation():
     outputFile = open('info_users/users.txt', "w")
 
@@ -54,6 +55,7 @@ def delete_repeation():
 
     inputFile.close()
     outputFile.close()
+
 
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -97,7 +99,6 @@ def check_callback_data(call):
             send_to_adm_chat_buy(call)
 
 
-
 @bot.message_handler(content_types=['text'])
 def get_text(message):
     if message.text == '📢Информация':
@@ -121,14 +122,23 @@ def get_text(message):
         bot.send_message(message.chat.id, text='<i>Помощь в выборе товара -</i>\n'
                                                '@asphxxk', parse_mode='html', reply_markup=helping)
 
-    if message.text == '📩Отзывы':
-        feedback = types.InlineKeyboardMarkup()
-        feed = types.InlineKeyboardButton("Отзывы", url="https://otzovik.com/lastreviews")
-        cancel = types.InlineKeyboardButton("❌Отмена", callback_data="cancel")
-        feedback.add(feed)
-        feedback.add(cancel)
-        bot.send_message(message.chat.id, text='здесь вы можете ознакомиться с отзывами',
-                         parse_mode='html', reply_markup=feedback)
+    if message.text == '📩Ваши предложения':
+        bot.send_message(message.chat.id, text='<b>Здесь Вы можете оставить ВСЕ свои пожелания по улучшению '
+                                               'качества работы\n'
+                                               'Это могут быть варианты улучшения магазина, '
+                                               'добавление новых товаров или устранение ошибок\n'
+                                               '\n'
+                                               'Нам важно Ваше мнение!\n'
+                                               '\n'
+                                               'https://t.me/+3D4fwse-TApjMDIy</b>', parse_mode='html')
+
+    if message.text == '🔗Наша группа':
+        bot.send_message(message.chat.id, text='<b>Подписывайся на наш канал!!!\n'
+                                               '\n'
+                                               'Тут мы публикуем новости и красивые видео с обзорами товаров\n'
+                                               '\n'
+                                               'https://t.me/plusrepeat</b>',
+                         parse_mode='html')
 
     if message.text == '🛍️Каталог':
         # категории в каталоге в меню клавиатуры, прикреплены к фото
