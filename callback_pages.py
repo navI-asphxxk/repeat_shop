@@ -7,8 +7,7 @@ import json
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
-
-def callback_nike_force_pages(call):
+def callback_pages(call, brand, callback_string, data_price, data_name):
     req = call.data.split('_')
     # Обработка кнопки - скрыть
     if req[0] == 'unseen':
@@ -17,332 +16,83 @@ def callback_nike_force_pages(call):
         except Exception as ex:
             print(ex)
     # Обработка кнопок - вперед и назад
-    #callback
-    elif 'force' in req[0]:
+    elif callback_string in req[0]:
         # Расспарсим полученный JSON
         json_string = json.loads(req[0])
         count = json_string['CountPage']
         page = json_string['NumberPage']
+
         # Пересоздаем markup
         markup = InlineKeyboardMarkup()
         markup.add(InlineKeyboardButton(text='Скрыть', callback_data='unseen'))
+
+        # callback в формате json
+        j_data_up = {"method": callback_string,
+                     "NumberPage": page + 1,
+                     "CountPage": count
+                     }
+        j_data_down = {"method": callback_string,
+                       "NumberPage": page - 1,
+                       "CountPage": count
+                       }
+
         # markup для первой страницы
         if page == 1:
-            markup.add(InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',      # callback
-                                            callback_data="{\"method\":\"force\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
 
-        # markup для последней страницы
+            markup.add(InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
+                       InlineKeyboardButton(text=f'Вперёд --->',
+                                            callback_data=json.dumps(j_data_up)))
+
+        # markup для второй страницы
         elif page == count:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
-                                            callback_data="{\"method\":\"force\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
+
+            markup.add(InlineKeyboardButton(text=f'<--- Назад',
+                                            callback_data=json.dumps(j_data_down)),
                        InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '))
 
         # markup для остальных страниц
         else:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
-                                            callback_data="{\"method\":\"force\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',     # callback
-                                            callback_data="{\"method\":\"force\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
 
-        markup.add(                    # data цены
-            InlineKeyboardButton(text=f'{data.nike_force_price_pages[page - 1]}руб - Купить',
-                                 callback_data='buy'))
+            markup.add(InlineKeyboardButton(text=f'<--- Назад',
+                                            callback_data=json.dumps(j_data_down)),
+                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
+                       InlineKeyboardButton(text=f'Вперёд --->',
+                                            callback_data=json.dumps(j_data_up)))
+
+        markup.add(
+            InlineKeyboardButton(text=f'{data_price[page - 1]}руб - Купить', callback_data='buy'))
         # bot.edit_message_text(f' {data.shoes_name_pages[page-1]} ', reply_markup=markup, chat_id=call.message.chat.id,
         #                      message_id=call.message.message_id)
 
         try:
-            bot.edit_message_media(media=telebot.types.InputMedia(type='photo',          # папка = callback
-                                                                  media=open(f'pages/nike/force/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.nike_force_name_pages[page - 1]}'),
+            bot.edit_message_media(media=telebot.types.InputMedia(type='photo',
+                                                                  media=open(f'pages/{brand}/{callback_string}/{page}.jpg', 'rb'),
+                                                                  caption=f'{data_name[page - 1]}'),
                                    reply_markup=markup,
                                    chat_id=call.message.chat.id, message_id=call.message.message_id)
         except Exception as ex:
             print(ex)
+
+
+def callback_nike_force_pages(call):
+    callback_pages(call, 'nike', 'force', data.nike_force_price_pages, data.nike_force_name_pages)
 
 
 def callback_nike_dunk_high_pages(call):
-    req = call.data.split('_')
-    # Обработка кнопки - скрыть
-    if req[0] == 'unseen':
-        try:
-            bot.delete_message(call.message.chat.id, call.message.message_id)
-        except Exception as ex:
-            print(ex)
-    # Обработка кнопок - вперед и назад
-    #callback
-    elif 'dunk_high' in req[0]:
-        # Расспарсим полученный JSON
-        json_string = json.loads(req[0])
-        count = json_string['CountPage']
-        page = json_string['NumberPage']
-        # Пересоздаем markup
-        markup = InlineKeyboardMarkup()
-        markup.add(InlineKeyboardButton(text='Скрыть', callback_data='unseen'))
-        # markup для первой страницы
-        if page == 1:
-            markup.add(InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',      # callback
-                                            callback_data="{\"method\":\"dunk_high\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        # markup для последней страницы
-        elif page == count:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
-                                            callback_data="{\"method\":\"dunk_high\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '))
-
-        # markup для остальных страниц
-        else:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
-                                            callback_data="{\"method\":\"dunk_high\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',     # callback
-                                            callback_data="{\"method\":\"dunk_high\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        markup.add(                    # data цены
-            InlineKeyboardButton(text=f'{data.nike_dunk_high_price_pages[page - 1]}руб - Купить',
-                                 callback_data='buy'))
-        # bot.edit_message_text(f' {data.shoes_name_pages[page-1]} ', reply_markup=markup, chat_id=call.message.chat.id,
-        #                      message_id=call.message.message_id)
-
-        try:
-            bot.edit_message_media(media=telebot.types.InputMedia(type='photo',          # папка = callback
-                                                                  media=open(f'pages/nike/dunk_high/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.nike_dunk_high_name_pages[page - 1]}'),
-                                   reply_markup=markup,
-                                   chat_id=call.message.chat.id, message_id=call.message.message_id)
-        except Exception as ex:
-            print(ex)
+    callback_pages(call, 'nike', 'dunk_high', data.nike_dunk_high_price_pages, data.nike_dunk_high_name_pages)
 
 
 def callback_nike_dunk_low_pages(call):
-    req = call.data.split('_')
-    # Обработка кнопки - скрыть
-    if req[0] == 'unseen':
-        try:
-            bot.delete_message(call.message.chat.id, call.message.message_id)
-        except Exception as ex:
-            print(ex)
-    # Обработка кнопок - вперед и назад
-    #callback
-    elif 'dunk_low' in req[0]:
-        # Расспарсим полученный JSON
-        json_string = json.loads(req[0])
-        count = json_string['CountPage']
-        page = json_string['NumberPage']
-        # Пересоздаем markup
-        markup = InlineKeyboardMarkup()
-        markup.add(InlineKeyboardButton(text='Скрыть', callback_data='unseen'))
-        # markup для первой страницы
-        if page == 1:
-            markup.add(InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',      # callback
-                                            callback_data="{\"method\":\"dunk_low\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
+    callback_pages(call, 'nike', 'dunk_low', data.nike_dunk_low_price_pages, data.nike_dunk_low_name_pages)
 
-        # markup для последней страницы
-        elif page == count:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
-                                            callback_data="{\"method\":\"dunk_low\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '))
-
-        # markup для остальных страниц
-        else:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
-                                            callback_data="{\"method\":\"dunk_low\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',     # callback
-                                            callback_data="{\"method\":\"dunk_low\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        markup.add(                    # data цены
-            InlineKeyboardButton(text=f'{data.nike_dunk_low_price_pages[page - 1]}руб - Купить',
-                                 callback_data='buy'))
-        # bot.edit_message_text(f' {data.shoes_name_pages[page-1]} ', reply_markup=markup, chat_id=call.message.chat.id,
-        #                      message_id=call.message.message_id)
-
-        try:
-            bot.edit_message_media(media=telebot.types.InputMedia(type='photo',          # папка = callback
-                                                                  media=open(f'pages/nike/dunk_low/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.nike_dunk_low_name_pages[page - 1]}'),
-                                   reply_markup=markup,
-                                   chat_id=call.message.chat.id, message_id=call.message.message_id)
-        except Exception as ex:
-            print(ex)
 
 def callback_nike_monarch_pages(call):
-    req = call.data.split('_')
-    # Обработка кнопки - скрыть
-    if req[0] == 'unseen':
-        try:
-            bot.delete_message(call.message.chat.id, call.message.message_id)
-        except Exception as ex:
-            print(ex)
-    # Обработка кнопок - вперед и назад
-    elif 'monarch' in req[0]:
-        # Расспарсим полученный JSON
-        json_string = json.loads(req[0])
-        count = json_string['CountPage']
-        page = json_string['NumberPage']
-        # Пересоздаем markup
-        markup = InlineKeyboardMarkup()
-        markup.add(InlineKeyboardButton(text='Скрыть', callback_data='unseen'))
-        # markup для первой страницы
-        if page == 1:
-            markup.add(InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',
-                                            callback_data="{\"method\":\"monarch\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        # markup для второй страницы
-        elif page == count:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',
-                                            callback_data="{\"method\":\"monarch\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '))
-
-        # markup для остальных страниц
-        else:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',
-                                            callback_data="{\"method\":\"monarch\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',
-                                            callback_data="{\"method\":\"monarch\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        markup.add(
-            InlineKeyboardButton(text=f'{data.nike_monarch_price_pages[page - 1]}руб - Купить', callback_data='buy'))
-
-        try:
-            bot.edit_message_media(media=telebot.types.InputMedia(type='photo',
-                                                                  media=open(f'pages/nike/monarch/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.nike_monarch_name_pages[page - 1]}'),
-                                   reply_markup=markup,
-                                   chat_id=call.message.chat.id, message_id=call.message.message_id)
-        except Exception as ex:
-            print(ex)
-
+    callback_pages(call, 'nike', 'monarch', data.nike_monarch_price_pages, data.nike_monarch_name_pages)
 
 
 def callback_nike_m2k_pages(call):
-    req = call.data.split('_')
-    # Обработка кнопки - скрыть
-    if req[0] == 'unseen':
-        try:
-            bot.delete_message(call.message.chat.id, call.message.message_id)
-        except Exception as ex:
-            print(ex)
-    # Обработка кнопок - вперед и назад
-    elif 'm2k' in req[0]:
-        # Расспарсим полученный JSON
-        json_string = json.loads(req[0])
-        count = json_string['CountPage']
-        page = json_string['NumberPage']
-        # Пересоздаем markup
-        markup = InlineKeyboardMarkup()
-        markup.add(InlineKeyboardButton(text='Скрыть', callback_data='unseen'))
-        # markup для первой страницы
-        if page == 1:
-            markup.add(InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',
-                                            callback_data="{\"method\":\"m2k\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        # markup для второй страницы
-        elif page == count:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',
-                                            callback_data="{\"method\":\"m2k\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '))
-
-        # markup для остальных страниц
-        else:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',
-                                            callback_data="{\"method\":\"m2k\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',
-                                            callback_data="{\"method\":\"m2k\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        markup.add(
-            InlineKeyboardButton(text=f'{data.nike_m2k_price_pages[page - 1]}руб - Купить', callback_data='buy'))
-
-        try:
-            bot.edit_message_media(media=telebot.types.InputMedia(type='photo',
-                                                                  media=open(f'pages/nike/m2k/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.nike_m2k_name_pages[page - 1]}'),
-                                   reply_markup=markup,
-                                   chat_id=call.message.chat.id, message_id=call.message.message_id)
-        except Exception as ex:
-            print(ex)
+    callback_pages(call, 'nike', 'm2k', data.nike_m2k_price_pages, data.nike_m2k_name_pages)
 
 
 def callback_nike_plus_pages(call):
-    req = call.data.split('_')
-    # Обработка кнопки - скрыть
-    if req[0] == 'unseen':
-        try:
-            bot.delete_message(call.message.chat.id, call.message.message_id)
-        except Exception as ex:
-            print(ex)
-    # Обработка кнопок - вперед и назад
-    #callback
-    elif 'plus' in req[0]:
-        # Расспарсим полученный JSON
-        json_string = json.loads(req[0])
-        count = json_string['CountPage']
-        page = json_string['NumberPage']
-        # Пересоздаем markup
-        markup = InlineKeyboardMarkup()
-        markup.add(InlineKeyboardButton(text='Скрыть', callback_data='unseen'))
-        # markup для первой страницы
-        if page == 1:
-            markup.add(InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',      # callback
-                                            callback_data="{\"method\":\"plus\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        # markup для последней страницы
-        elif page == count:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
-                                            callback_data="{\"method\":\"plus\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '))
-
-        # markup для остальных страниц
-        else:
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',      # callback
-                                            callback_data="{\"method\":\"plus\",\"NumberPage\":" + str(
-                                                page - 1) + ",\"CountPage\":" + str(count) + "}"),
-                       InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',     # callback
-                                            callback_data="{\"method\":\"plus\",\"NumberPage\":" + str(
-                                                page + 1) + ",\"CountPage\":" + str(count) + "}"))
-
-        markup.add(                    # data цены
-            InlineKeyboardButton(text=f'{data.nike_plus_price_pages[page - 1]}руб - Купить',
-                                 callback_data='buy'))
-        # bot.edit_message_text(f' {data.shoes_name_pages[page-1]} ', reply_markup=markup, chat_id=call.message.chat.id,
-        #                      message_id=call.message.message_id)
-
-        try:
-            bot.edit_message_media(media=telebot.types.InputMedia(type='photo',          # папка = callback
-                                                                  media=open(f'pages/nike/plus/{page}.jpg', 'rb'),
-                                                                  caption=f'{data.nike_plus_name_pages[page - 1]}'),
-                                   reply_markup=markup,
-                                   chat_id=call.message.chat.id, message_id=call.message.message_id)
-        except Exception as ex:
-            print(ex)
+    callback_pages(call, 'nike', 'plus', data.nike_plus_price_pages, data.nike_plus_name_pages)
