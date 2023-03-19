@@ -74,25 +74,37 @@ def callback_pages(call, brand, callback_string, data_price, data_name):
             print(ex)
 
 
+def callback_crocs_pages(call):
+    callback_pages(call, 'crocs', 'crocs', data.crocs_price_pages, data.crocs_name_pages)
+
 def callback_nike_force_pages(call):
     callback_pages(call, 'nike', 'force', data.nike_force_price_pages, data.nike_force_name_pages)
-
 
 def callback_nike_dunk_high_pages(call):
     callback_pages(call, 'nike', 'dunk_high', data.nike_dunk_high_price_pages, data.nike_dunk_high_name_pages)
 
-
 def callback_nike_dunk_low_pages(call):
     callback_pages(call, 'nike', 'dunk_low', data.nike_dunk_low_price_pages, data.nike_dunk_low_name_pages)
-
 
 def callback_nike_monarch_pages(call):
     callback_pages(call, 'nike', 'monarch', data.nike_monarch_price_pages, data.nike_monarch_name_pages)
 
-
 def callback_nike_m2k_pages(call):
     callback_pages(call, 'nike', 'm2k', data.nike_m2k_price_pages, data.nike_m2k_name_pages)
 
-
 def callback_nike_plus_pages(call):
     callback_pages(call, 'nike', 'plus', data.nike_plus_price_pages, data.nike_plus_name_pages)
+
+def callback_nike_vapormax_pages(call):
+    callback_pages(call, 'nike', 'vapormax', data.nike_vapormax_price_pages, data.nike_vapormax_name_pages)
+
+def callback_nike_air97_pages(call):
+    callback_pages(call, 'nike', 'air97', data.nike_97_price_pages, data.nike_97_name_pages)
+
+def callback_nike_air95_pages(call):
+    callback_pages(call, 'nike', 'air95', data.nike_95_price_pages, data.nike_95_name_pages)
+
+def callback_nike_air720_pages(call):
+    callback_pages(call, 'nike', 'air720', data.nike_720_price_pages, data.nike_720_name_pages)
+
+

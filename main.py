@@ -40,9 +40,9 @@ def send_to_adm_chat_buy(call):
 
 
 # Запись информации юзера в файл
-def file_user_info(username, uid):
+def file_user_info(username, uid, name):
     file = open('info_users/users_repeation.txt', 'a')
-    file.write(f"Username: {username}, id: {uid}\n")
+    file.write(f"Username: {username}, id: {uid}, name: {name}\n")
 
     file.close()
 
@@ -68,7 +68,7 @@ def delete_repeation():
 @bot.message_handler(commands=['start'])
 def start(message):
     # Запись инфы о пользователях бота
-    file_user_info(message.from_user.username, message.from_user.id)
+    file_user_info(message.from_user.username, message.from_user.id, message.from_user.first_name)
     delete_repeation()
 
     photo = open('photoPrivet.jpg', 'rb')
@@ -100,9 +100,19 @@ def check_callback_data(call):
             bot.delete_message(call.message.chat.id, call.message.message_id - 1)
             bot.send_message(call.message.chat.id, text='cancel', parse_mode='html', reply_markup=keyboard_menu)
 
+        callback_pages.callback_crocs_pages(call)
+
         callback_pages.callback_nike_force_pages(call)
+        callback_pages.callback_nike_dunk_high_pages(call)
+        callback_pages.callback_nike_dunk_low_pages(call)
         callback_pages.callback_nike_monarch_pages(call)
         callback_pages.callback_nike_m2k_pages(call)
+        callback_pages.callback_nike_plus_pages(call)
+        callback_pages.callback_nike_vapormax_pages(call)
+        callback_pages.callback_nike_air97_pages(call)
+        callback_pages.callback_nike_air95_pages(call)
+        callback_pages.callback_nike_air720_pages(call)
+
 
         if call.data == "buy":
             send_to_adm_chat_buy(call)
@@ -166,6 +176,8 @@ def get_text(message):
         bot.send_message(message.chat.id, text='back',
                          parse_mode='html', reply_markup=katalog_menu())
 
+
+
     if message.text == '👟Nike':
         photo = open('pages/nike/nike.jpg', 'rb')
         bot.send_photo(message.chat.id, photo, reply_markup=menu_nike())
@@ -190,14 +202,45 @@ def get_text(message):
         photo = open('pages/New balance/new balance.png', 'rb')
         bot.send_photo(message.chat.id, photo, reply_markup=menu_nb())
 
+
+
+    if message.text == '🐤Crocs':
+        text_pages.text_crocs_pages(message)
+
+
+
     if message.text == 'Air Force 1 Low':
         text_pages.text_nike_force_pages(message)
+
+    if message.text == 'Dunk High':
+        text_pages.text_nike_dunk_high_pages(message)
+
+    if message.text == 'Dunk Low':
+        text_pages.text_nike_dunk_low_pages(message)
 
     if message.text == 'Air Monarch':
         text_pages.text_nike_monarch_pages(message)
 
-    if message.text == 'M2K Tekno':
+    if message.text == 'Air M2K Tekno':
         text_pages.text_nike_m2k_pages(message)
+
+    if message.text == 'Air Max Plus':
+        text_pages.text_nike_plus_pages(message)
+
+    if message.text == 'Air Vapormax':
+        text_pages.text_nike_vapormax_pages(message)
+
+    if message.text == 'Air Vapormax':
+        text_pages.text_nike_vapormax_pages(message)
+
+    if message.text == 'Air Max 97':
+        text_pages.text_nike_air97_pages(message)
+
+    if message.text == 'Air Max 95':
+        text_pages.text_nike_air95_pages(message)
+
+    if message.text == 'Air Max 720':
+        text_pages.text_nike_air720_pages(message)
 
 
 bot.polling(none_stop=True)

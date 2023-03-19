@@ -1,5 +1,12 @@
 # Вбивается База данных вручную
+CROCS = 1
+crocs_name_pages = []
 
+crocs_price_pages = []
+
+
+
+NIKE=1
 nike_force_name_pages = ["adidas forum low - Pink",
                     "Nike air force",
                     "asfasf",

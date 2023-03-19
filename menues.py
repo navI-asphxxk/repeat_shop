@@ -26,11 +26,13 @@ def katalog_menu():
     jordan = types.KeyboardButton(text='👟Jordan')
     converse = types.KeyboardButton(text='Converse')
     nb = types.KeyboardButton(text='New Balance👟')
+    crocs = types.KeyboardButton(text='🐤Crocs')
 
     back = types.KeyboardButton(text='🔙Назад в главное меню')
 
     katalog_menu.add(nike, adidas, reebok)
     katalog_menu.add(jordan, converse, nb)
+    katalog_menu.add(crocs)
     katalog_menu.add(back)
 
     return katalog_menu
