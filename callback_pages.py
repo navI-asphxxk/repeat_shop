@@ -162,3 +162,31 @@ def callback_reebok_classic_legacy_pages(call):
 
 def callback_reebok_daytona_dmx_pages(call):
     callback_pages(call, 'reebok', 'daytona_dmx', data.reebok_daytona_dmx_price, data.reebok_daytona_dmx_name)
+
+
+
+def callback_jordan_air_1_high_pages(call):
+    callback_pages(call, 'jordan', 'air_1_high', data.jordan_1_high_price, data.jordan_1_high_name)
+
+def callback_jordan_air_1_mid_pages(call):
+    callback_pages(call, 'jordan', 'air_1_mid', data.jordan_1_mid_price, data.jordan_1_mid_name)
+
+def callback_jordan_air_1_low_pages(call):
+    callback_pages(call, 'jordan', 'air_1_low', data.jordan_1_low_price, data.jordan_1_low_name)
+
+def callback_jordan_3_retro_pages(call):
+    callback_pages(call, 'jordan', '3_retro', data.jordan_3_retro_price, data.jordan_3_retro_name)
+
+def callback_jordan_4_retro_pages(call):
+    callback_pages(call, 'jordan', '4_retro', data.jordan_4_retro_price, data.jordan_4_retro_name)
+
+def callback_jordan_5_retro_pages(call):
+    callback_pages(call, 'jordan', '5_retro', data.jordan_5_retro_price, data.jordan_5_retro_name)
+
+def callback_jordan_ultra_fly_2_low_pages(call):
+    callback_pages(call, 'jordan', 'ultra_fly_2_low', data.jordan_ultrafly_2_low_price,
+                                                      data.jordan_ultrafly_2_low_name)
+
+def callback_jordan_legacy_312_pages(call):
+    callback_pages(call, 'jordan', 'legacy_312', data.jordan_legacy_312_price, data.jordan_legacy_312_name)
+

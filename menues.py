@@ -126,7 +126,7 @@ def menu_converse():
 def menu_jordan():
     jordan_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
     j1 = types.KeyboardButton(text='Air Jordan 1 High')
-    j2 = types.KeyboardButton(text='Air Jordan 1 Midle')
+    j2 = types.KeyboardButton(text='Air Jordan 1 Mid')
     j3 = types.KeyboardButton(text='Air Jordan 1 Low')
     j4 = types.KeyboardButton(text='Jordan 3 Retro')
     j5 = types.KeyboardButton(text='Jordan 4 Retro')

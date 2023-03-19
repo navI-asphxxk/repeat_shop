@@ -154,3 +154,38 @@ reebok_classic_legacy_name = []
 reebok_daytona_dmx_price = []
 
 reebok_daytona_dmx_name = []
+
+
+
+JORDAN = None
+jordan_1_high_price = []
+
+jordan_1_high_name = []
+
+jordan_1_mid_price = []
+
+jordan_1_mid_name = []
+
+jordan_1_low_price = []
+
+jordan_1_low_name = []
+
+jordan_3_retro_price = []
+
+jordan_3_retro_name = []
+
+jordan_4_retro_price = []
+
+jordan_4_retro_name = []
+
+jordan_5_retro_price = []
+
+jordan_5_retro_name = []
+
+jordan_ultrafly_2_low_price = []
+
+jordan_ultrafly_2_low_name = []
+
+jordan_legacy_312_price = []
+
+jordan_legacy_312_name = []

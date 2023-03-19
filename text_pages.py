@@ -121,3 +121,27 @@ def text_reebok_daytona_dmx_pages(message):
 
 
 
+def text_jordan_air_1_high_pages(message):
+    text_pages(message, 'jordan', 'air_1_high', data.jordan_1_high_price, data.jordan_1_high_name)
+
+def text_jordan_air_1_mid_pages(message):
+    text_pages(message, 'jordan', 'air_1_mid', data.jordan_1_mid_price, data.jordan_1_mid_name)
+
+def text_jordan_air_1_low_pages(message):
+    text_pages(message, 'jordan', 'air_1_low', data.jordan_1_low_price, data.jordan_1_low_name)
+
+def text_jordan_3_retro_pages(message):
+    text_pages(message, 'jordan', '3_retro', data.jordan_3_retro_price, data.jordan_3_retro_name)
+
+def text_jordan_4_retro_pages(message):
+    text_pages(message, 'jordan', '4_retro', data.jordan_4_retro_price, data.jordan_4_retro_name)
+
+def text_jordan_5_retro_pages(message):
+    text_pages(message, 'jordan', '5_retro', data.jordan_5_retro_price, data.jordan_5_retro_name)
+
+def text_jordan_ultra_fly_2_low_pages(message):
+    text_pages(message, 'jordan', 'ultra_fly_2_low', data.jordan_ultrafly_2_low_price,
+                                                      data.jordan_ultrafly_2_low_name)
+
+def text_jordan_legacy_312_pages(message):
+    text_pages(message, 'jordan', 'legacy_312', data.jordan_legacy_312_price, data.jordan_legacy_312_name)

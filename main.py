@@ -131,6 +131,14 @@ def check_callback_data(call):
         callback_pages.callback_reebok_classic_legacy_pages(call)
         callback_pages.callback_reebok_daytona_dmx_pages(call)
 
+        callback_pages.callback_jordan_air_1_high_pages(call)
+        callback_pages.callback_jordan_air_1_mid_pages(call)
+        callback_pages.callback_jordan_air_1_low_pages(call)
+        callback_pages.callback_jordan_3_retro_pages(call)
+        callback_pages.callback_jordan_4_retro_pages(call)
+        callback_pages.callback_jordan_5_retro_pages(call)
+        callback_pages.callback_jordan_ultra_fly_2_low_pages(call)
+
 
         if call.data == "buy":
             send_to_adm_chat_buy(call)
@@ -311,6 +319,32 @@ def get_text(message):
 
     if message.text == 'Daytona DMX':
         text_pages.text_reebok_daytona_dmx_pages(message)
+
+
+
+    if message.text == 'Air Jordan 1 High':
+        text_pages.text_jordan_air_1_high_pages(message)
+
+    if message.text == 'Air Jordan 1 Mid':
+        text_pages.text_jordan_air_1_mid_pages(message)
+
+    if message.text == 'Air Jordan 1 Low':
+        text_pages.text_jordan_air_1_low_pages(message)
+
+    if message.text == 'Jordan 3 Retro':
+        text_pages.text_jordan_3_retro_pages(message)
+
+    if message.text == 'Jordan 4 Retro':
+        text_pages.text_jordan_4_retro_pages(message)
+
+    if message.text == 'Jordan 5 Retro':
+        text_pages.text_jordan_5_retro_pages(message)
+
+    if message.text == 'Ultra Fly 2 Low':
+        text_pages.text_jordan_ultra_fly_2_low_pages(message)
+
+    if message.text == 'Legacy 312':
+        text_pages.text_jordan_legacy_312_pages(message)
 
 
 bot.polling(none_stop=True)
