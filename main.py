@@ -113,6 +113,18 @@ def check_callback_data(call):
         callback_pages.callback_nike_air95_pages(call)
         callback_pages.callback_nike_air720_pages(call)
 
+        callback_pages.callback_adidas_forum_low_pages(call)
+        callback_pages.callback_adidas_ozweego_pages(call)
+        callback_pages.callback_adidas_yeezy_boost_350_pages(call)
+        callback_pages.callback_adidas_ozelia_pages(call)
+        callback_pages.callback_adidas_niteball_pages(call)
+        callback_pages.callback_adidas_falcon_pages(call)
+        callback_pages.callback_adidas_superstar_pages(call)
+        callback_pages.callback_adidas_stan_smith_pages(call)
+        callback_pages.callback_adidas_supercourt_pages(call)
+        callback_pages.callback_adidas_terrex_pages(call)
+
+
 
         if call.data == "buy":
             send_to_adm_chat_buy(call)
@@ -241,6 +253,38 @@ def get_text(message):
 
     if message.text == 'Air Max 720':
         text_pages.text_nike_air720_pages(message)
+
+
+
+    if message.text == 'Forum Low':
+        text_pages.text_adidas_forum_low_pages(message)
+
+    if message.text == 'Ozweego':
+        text_pages.text_adidas_ozweego_pages(message)
+
+    if message.text == 'Yeezy Boost 350':
+        text_pages.text_adidas_yeezy_boost_350_pages(message)
+
+    if message.text == 'Ozelia':
+        text_pages.text_adidas_ozelia_pages(message)
+
+    if message.text == 'Niteball':
+        text_pages.text_adidas_niteball_pages(message)
+
+    if message.text == 'Falcon':
+        text_pages.text_adidas_falcon_pages(message)
+
+    if message.text == 'Superstar':
+        text_pages.text_adidas_superstar_pages(message)
+
+    if message.text == 'Stan Smith':
+        text_pages.text_adidas_stan_smith_pages(message)
+
+    if message.text == 'Supercourt':
+        text_pages.text_adidas_supercourt_pages(message)
+
+    if message.text == 'Terrex':
+        text_pages.text_adidas_terrex_pages(message)
 
 
 bot.polling(none_stop=True)

@@ -40,23 +40,23 @@ def callback_pages(call, brand, callback_string, data_price, data_name):
         if page == 1:
 
             markup.add(InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',
+                       InlineKeyboardButton(text=f'▶️',
                                             callback_data=json.dumps(j_data_up)))
 
         # markup для второй страницы
         elif page == count:
 
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',
+            markup.add(InlineKeyboardButton(text=f'◀️',
                                             callback_data=json.dumps(j_data_down)),
                        InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '))
 
         # markup для остальных страниц
         else:
 
-            markup.add(InlineKeyboardButton(text=f'<--- Назад',
+            markup.add(InlineKeyboardButton(text=f'◀️',
                                             callback_data=json.dumps(j_data_down)),
                        InlineKeyboardButton(text=f'{page}/{count}', callback_data=f' '),
-                       InlineKeyboardButton(text=f'Вперёд --->',
+                       InlineKeyboardButton(text=f'▶️',
                                             callback_data=json.dumps(j_data_up)))
 
         markup.add(
@@ -74,8 +74,11 @@ def callback_pages(call, brand, callback_string, data_price, data_name):
             print(ex)
 
 
+
 def callback_crocs_pages(call):
     callback_pages(call, 'crocs', 'crocs', data.crocs_price_pages, data.crocs_name_pages)
+
+
 
 def callback_nike_force_pages(call):
     callback_pages(call, 'nike', 'force', data.nike_force_price_pages, data.nike_force_name_pages)
@@ -107,4 +110,36 @@ def callback_nike_air95_pages(call):
 def callback_nike_air720_pages(call):
     callback_pages(call, 'nike', 'air720', data.nike_720_price_pages, data.nike_720_name_pages)
 
+
+
+def callback_adidas_forum_low_pages(call):
+    callback_pages(call, 'adidas', 'forum_low', data.adidas_forum_low_price, data.adidas_forum_low_name)
+
+def callback_adidas_ozweego_pages(call):
+    callback_pages(call, 'adidas', 'ozweego', data.adidas_ozweego_price, data.adidas_ozweego_name)
+
+def callback_adidas_yeezy_boost_350_pages(call):
+    callback_pages(call, 'adidas', 'yeezy_boost_350', data.adidas_yeezy_boost_350_price,
+                                                      data.adidas_yeezy_boost_350_name)
+
+def callback_adidas_ozelia_pages(call):
+    callback_pages(call, 'adidas', 'ozelia', data.adidas_ozelia_price, data.adidas_ozelia_name)
+
+def callback_adidas_niteball_pages(call):
+    callback_pages(call, 'adidas', 'niteball', data.adidas_niteball_price, data.adidas_niteball_name)
+
+def callback_adidas_falcon_pages(call):
+    callback_pages(call, 'adidas', 'falcon', data.adidas_falcon_price, data.adidas_falcon_name)
+
+def callback_adidas_superstar_pages(call):
+    callback_pages(call, 'adidas', 'superstar', data.adidas_superstar_price, data.adidas_superstar_name)
+
+def callback_adidas_stan_smith_pages(call):
+    callback_pages(call, 'adidas', 'stan_smith', data.adidas_stan_smith_price, data.adidas_stan_smith_name)
+
+def callback_adidas_supercourt_pages(call):
+    callback_pages(call, 'adidas', 'supercourt', data.adidas_supercourt_price, data.adidas_supercourt_name)
+
+def callback_adidas_terrex_pages(call):
+    callback_pages(call, 'adidas', 'terrex', data.adidas_terrex_price, data.adidas_terrex_name)
 
