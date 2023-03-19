@@ -124,6 +124,12 @@ def check_callback_data(call):
         callback_pages.callback_adidas_supercourt_pages(call)
         callback_pages.callback_adidas_terrex_pages(call)
 
+        callback_pages.callback_reebok_dmx_1200_pages(call)
+        callback_pages.callback_reebok_instapump_fury_pages(call)
+        callback_pages.callback_reebok_fluffipuff_pages(call)
+        callback_pages.callback_reebok_dmx_1000_pages(call)
+        callback_pages.callback_reebok_classic_legacy_pages(call)
+        callback_pages.callback_reebok_daytona_dmx_pages(call)
 
 
         if call.data == "buy":
@@ -285,6 +291,26 @@ def get_text(message):
 
     if message.text == 'Terrex':
         text_pages.text_adidas_terrex_pages(message)
+
+
+
+    if message.text == 'DMX Series 1200':
+        text_pages.text_reebok_dmx_1200_pages(message)
+
+    if message.text == 'Instapump Fury':
+        text_pages.text_reebok_instapump_fury_pages(message)
+
+    if message.text == 'Fluffipuff':
+        text_pages.text_reebok_fluffipuff_pages(message)
+
+    if message.text == 'DMX Series 1000':
+        text_pages.text_reebok_dmx_1000_pages(message)
+
+    if message.text == 'Classic Legacy':
+        text_pages.text_reebok_classic_legacy_pages(message)
+
+    if message.text == 'Daytona DMX':
+        text_pages.text_reebok_daytona_dmx_pages(message)
 
 
 bot.polling(none_stop=True)

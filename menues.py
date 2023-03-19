@@ -93,10 +93,10 @@ def menu_adidas():
 def menu_reebok():
     reebok_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
     r1 = types.KeyboardButton(text='DMX Series 1200')
-    r2 = types.KeyboardButton(text='DMX Series 1000')
+    r2 = types.KeyboardButton(text='Instapump Fury')
     r3 = types.KeyboardButton(text='Fluffipuff')
-    r4 = types.KeyboardButton(text='Classic Legacy')
-    r5 = types.KeyboardButton(text='Instapump Fury')
+    r4 = types.KeyboardButton(text='DMX Series 1000')
+    r5 = types.KeyboardButton(text='Classic Legacy')
     r6 = types.KeyboardButton(text='Daytona DMX')
     back = types.KeyboardButton(text='🔙Назад к категориям')
 

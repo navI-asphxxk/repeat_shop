@@ -1,12 +1,12 @@
 # Вбивается База данных вручную
-CROCS = 1
+CROCS = None
 crocs_name_pages = []
 
 crocs_price_pages = []
 
 
 
-NIKE = 1
+NIKE = None
 nike_force_name_pages = ["adidas forum low - Pink",
                     "Nike air force",
                     "asfasf",
@@ -87,7 +87,7 @@ nike_720_price_pages = [0,
 
 
 
-ADIDAS = 1
+ADIDAS = None
 adidas_forum_low_price = []
 
 adidas_forum_low_name = []
@@ -130,3 +130,27 @@ adidas_terrex_name = []
 
 
 
+REEBOK = None
+reebok_dmx_1200_price = []
+
+reebok_dmx_1200_name = []
+
+reebok_instapump_fury_price = []
+
+reebok_instapump_fury_name = []
+
+reebok_fluffipuff_price = []
+
+reebok_fluffipuff_name = []
+
+reebok_dmx_1000_price = []
+
+reebok_dmx_1000_name = []
+
+reebok_classic_legacy_price = []
+
+reebok_classic_legacy_name = []
+
+reebok_daytona_dmx_price = []
+
+reebok_daytona_dmx_name = []
