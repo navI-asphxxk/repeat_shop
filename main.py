@@ -35,17 +35,17 @@ def send_to_adm_chat_buy(call):
 
 
 # Запись информации юзера в файл
-def file_user_info(username, uid, name):
-    file = open('info_users/users_repeation.txt', 'a')
-    file.write(f"Username: {username}, id: {uid}, name: {name}\n")
+def file_user_info(username, uid):
+    file = open('info_users/users_repeation.txt', 'a', encoding="utf-8")
+    file.write(f"Username: {username}, id: {uid}\n")
 
     file.close()
 
 
 def delete_repeation():
-    outputFile = open('info_users/users.txt', "w")
+    outputFile = open('info_users/users.txt', "w", encoding="utf-8")
 
-    inputFile = open('info_users/users_repeation.txt', "r")
+    inputFile = open('info_users/users_repeation.txt', "r", encoding="utf-8")
 
     lines_seen_so_far = set()
 
@@ -63,7 +63,7 @@ def delete_repeation():
 @bot.message_handler(commands=['start'])
 def start(message):
     # Запись инфы о пользователях бота
-    file_user_info(message.from_user.username, message.from_user.id, message.from_user.first_name)
+    file_user_info(message.from_user.username, message.from_user.id)
     delete_repeation()
 
     photo = open('photoPrivet.jpg', 'rb')
@@ -134,6 +134,15 @@ def check_callback_data(call):
         callback_pages.callback_jordan_5_retro_pages(call)
         callback_pages.callback_jordan_ultra_fly_2_low_pages(call)
 
+        callback_pages.callback_converse_aeon_active_pages(call)
+        callback_pages.callback_converse_aeon_active_pages(call)
+        callback_pages.callback_converse_all_star_bb_prototype_pages(call)
+        callback_pages.callback_converse_one_star_pages(call)
+        callback_pages.callback_converse_pro_blaze_strap_pages(call)
+
+        callback_pages.callback_nb_530_pages(call)
+        callback_pages.callback_nb_725_pages(call)
+        callback_pages.callback_nb_827_pages(call)
 
         if call.data == "buy":
             send_to_adm_chat_buy(call)
@@ -340,6 +349,40 @@ def get_text(message):
 
     if message.text == 'Legacy 312':
         text_pages.text_jordan_legacy_312_pages(message)
+
+
+
+    if message.text == 'Aeon Active CX':
+        text_pages.text_converse_aeon_active_pages(message)
+
+    if message.text == 'All Star 1970s':
+        text_pages.text_converse_all_star_1970_pages(message)
+
+    if message.text == 'All Star BB Prototype':
+        text_pages.text_converse_all_star_bb_prototype_pages(message)
+
+    if message.text == 'One Star':
+        text_pages.text_converse_one_star_pages(message)
+
+    if message.text == 'Pro Blaze Strap':
+        text_pages.text_converse_pro_blaze_strap_pages(message)
+
+
+
+    if message.text == 'NB 530':
+        text_pages.text_nb_530_pages(message)
+
+    if message.text == 'NB 725':
+        text_pages.text_nb_725_pages(message)
+
+    if message.text == 'NB 827':
+        text_pages.text_nb_827_pages(message)
+
+    if message.text == 'NB 452':
+        text_pages.text_nb_827_pages(message)
+
+    if message.text == 'NB 327':
+        text_pages.text_nb_827_pages(message)
 
 
 bot.polling(none_stop=True)

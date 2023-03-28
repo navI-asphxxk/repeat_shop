@@ -190,3 +190,40 @@ def callback_jordan_ultra_fly_2_low_pages(call):
 def callback_jordan_legacy_312_pages(call):
     callback_pages(call, 'jordan', 'legacy312', data.jordan_legacy_312_price, data.jordan_legacy_312_name)
 
+
+
+def callback_converse_aeon_active_pages(call):
+    callback_pages(call, 'converse', 'aeonActiveCX', data.converse_aeon_active_cx_price,
+                                                     data.converse_aeon_active_cx_name)
+
+def callback_converse_all_star_1970_pages(call):
+    callback_pages(call, 'converse', 'allStar1970', data.converse_all_star_1970_price, data.converse_all_star_1970_name)
+
+def callback_converse_all_star_bb_prototype_pages(call):
+    callback_pages(call, 'converse', 'allStarBBPrototype', data.converse_all_star_bb_prototype_price,
+                                                           data.converse_all_star_bb_prototype_name)
+
+def callback_converse_one_star_pages(call):
+    callback_pages(call, 'converse', 'oneStar', data.converse_one_star_price, data.converse_one_star_name)
+
+def callback_converse_pro_blaze_strap_pages(call):
+    callback_pages(call, 'converse', 'proBlazeStrap', data.converse_pro_blaze_strap_price,
+                                                      data.converse_pro_blaze_strap_name)
+
+
+
+def callback_nb_530_pages(call):
+    callback_pages(call, 'new balance', 'nb530', data.nb_530_price, data.nb_530_name)
+
+def callback_nb_725_pages(call):
+    callback_pages(call, 'new balance', 'nb725', data.nb_725_price, data.nb_725_name)
+
+def callback_nb_827_pages(call):
+    callback_pages(call, 'new balance', 'nb827', data.nb_827_price, data.nb_827_name)
+
+def callback_nb_452_pages(call):
+    callback_pages(call, 'new balance', 'nb452', data.nb_452_price, data.nb_452_name)
+
+def callback_nb_327_pages(call):
+    callback_pages(call, 'new balance', 'nb327', data.nb_327_price, data.nb_327_name)
+

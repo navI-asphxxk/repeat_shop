@@ -146,3 +146,40 @@ def text_jordan_ultra_fly_2_low_pages(message):
 
 def text_jordan_legacy_312_pages(message):
     text_pages(message, 'jordan', 'legacy312', data.jordan_legacy_312_price, data.jordan_legacy_312_name)
+
+
+
+def text_converse_aeon_active_pages(message):
+    text_pages(message, 'converse', 'aeonActiveCX', data.converse_aeon_active_cx_price,
+                                                    data.converse_aeon_active_cx_name)
+
+def text_converse_all_star_1970_pages(message):
+    text_pages(message, 'converse', 'allStar1970', data.converse_all_star_1970_price, data.converse_all_star_1970_name)
+
+def text_converse_all_star_bb_prototype_pages(message):
+    text_pages(message, 'converse', 'allStarBBPrototype', data.converse_all_star_bb_prototype_price,
+                                                          data.converse_all_star_bb_prototype_name)
+
+def text_converse_one_star_pages(message):
+    text_pages(message, 'converse', 'oneStar', data.converse_one_star_price, data.converse_one_star_name)
+
+def text_converse_pro_blaze_strap_pages(message):
+    text_pages(message, 'converse', 'proBlazeStrap', data.converse_pro_blaze_strap_price,
+                                                      data.converse_pro_blaze_strap_name)
+
+
+
+def text_nb_530_pages(message):
+    text_pages(message, 'new balance', 'nb530', data.nb_530_price, data.nb_530_name)
+
+def text_nb_725_pages(message):
+    text_pages(message, 'new balance', 'nb725', data.nb_725_price, data.nb_725_name)
+
+def text_nb_827_pages(message):
+    text_pages(message, 'new balance', 'nb827', data.nb_827_price, data.nb_827_name)
+
+def text_nb_452_pages(message):
+    text_pages(message, 'new balance', 'nb452', data.nb_452_price, data.nb_452_name)
+
+def text_nb_327_pages(message):
+    text_pages(message, 'new balance', 'nb327', data.nb_327_price, data.nb_327_name)

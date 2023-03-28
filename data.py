@@ -237,3 +237,49 @@ jordan_ultrafly_2_low_name = []
 jordan_legacy_312_price = []
 
 jordan_legacy_312_name = []
+
+
+
+CONVERSE = None
+converse_aeon_active_cx_price = []
+
+converse_aeon_active_cx_name = []
+
+converse_all_star_1970_price = []
+
+converse_all_star_1970_name = []
+
+converse_all_star_bb_prototype_price = []
+
+converse_all_star_bb_prototype_name = []
+
+converse_one_star_price = []
+
+converse_one_star_name = []
+
+converse_pro_blaze_strap_price = []
+
+converse_pro_blaze_strap_name = []
+
+
+
+NB = None
+nb_530_price = []
+
+nb_530_name = []
+
+nb_725_price = []
+
+nb_725_name = []
+
+nb_827_price = []
+
+nb_827_name = []
+
+nb_452_price = []
+
+nb_452_name = []
+
+nb_327_price = []
+
+nb_327_name = []
