@@ -1,35 +1,71 @@
 # Вбивается База данных вручную
 CROCS = None
-crocs_name_pages = []
+crocs_name_pages = ["1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15",
+                    "16"]
 
-crocs_price_pages = []
+crocs_price_pages = [6490,
+                     4990,
+                     6490,
+                     4990,
+                     6490,
+                     5990,
+                     6790,
+                     6990,
+                     4990,
+                     5990,
+                     6390,
+                     5490,
+                     4990,
+                     4190,
+                     4190,
+                     4990]
 
 
 
 NIKE = None
-nike_force_name_pages = ["adidas forum low - Pink",
-                    "Nike air force",
-                    "asfasf",
-                    "aags",
-                    "g",
-                    "h",
-                    "y",
-                    "fo",
-                    "yt",
-                    "ew",
-                    "ыпы"]
+nike_force_name_pages = ["1",
+                         "2",
+                         "3",
+                         "4",
+                         "5",
+                         "6",
+                         "7",
+                         "8",
+                         "9",
+                         "10",
+                         "11",
+                         "12",
+                         "13",
+                         "14"]
 
-nike_force_price_pages = [10,
-                     15,
-                     20,
-                     25,
-                     30,
-                     0,
-                     0,
-                     0,
-                     0,
-                     0,
-                     0]
+nike_force_price_pages = [12490,
+                          12490,
+                          12490,
+                          11990,
+                          13490,
+                          20490,
+                          19990,
+                          15790,
+                          15790,
+                          15790,
+                          15790,
+                          15790,
+                          15790,
+                          15790]
 
 nike_monarch_name_pages = ["Стоник поношенный",
                       "Стоник не поношенный"]
@@ -44,10 +80,22 @@ nike_m2k_price_pages = [1000,
                         500]
 
 nike_dunk_high_name_pages = ["1",
-                      "2"]
+                             "2",
+                             "3",
+                             "4",
+                             "5",
+                             "6",
+                             "7",
+                             "8"]
 
-nike_dunk_high_price_pages = [0,
-                        0]
+nike_dunk_high_price_pages = [13490,
+                              11690,
+                              11690,
+                              13990,
+                              14990,
+                              18990,
+                              22490,
+                              19990]
 
 nike_dunk_low_name_pages = ["1",
                       "2"]

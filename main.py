@@ -1,8 +1,9 @@
 import telebot
 from telebot import types
+
 from menues import main_menu, katalog_menu, menu_nike, menu_adidas, menu_reebok
 from menues import menu_converse, menu_jordan, menu_nb
-from config import BOT_TOKEN, team_id, error_message, admin_id
+from config import BOT_TOKEN, team_id, error_message, admin_id, send_error
 
 import random
 
@@ -10,12 +11,6 @@ import callback_pages
 import text_pages
 
 bot = telebot.TeleBot(BOT_TOKEN)
-
-#отправка ошибки в чат и админам
-def send_error(call, adm_mess):
-    bot.send_message(call.message.chat.id, text=error_message)
-
-    bot.send_message(chat_id=admin_id, text=adm_mess)
 
 def send_to_adm_chat_buy(call):
     id_buying = random.randint(10000000, 99999999)
