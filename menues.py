@@ -94,14 +94,16 @@ def menu_reebok():
     reebok_menu = types.ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
     r1 = types.KeyboardButton(text='DMX Series 1200')
     r2 = types.KeyboardButton(text='Instapump Fury')
-    r3 = types.KeyboardButton(text='Fluffipuff')
+    r3 = types.KeyboardButton(text='Question Low')
     r4 = types.KeyboardButton(text='DMX Series 1000')
-    r5 = types.KeyboardButton(text='Classic Legacy')
-    r6 = types.KeyboardButton(text='Daytona DMX')
+    r5 = types.KeyboardButton(text='Fluffipuff')
+    r6 = types.KeyboardButton(text='Classic Legacy')
+    r7 = types.KeyboardButton(text='Daytona DMX')
     back = types.KeyboardButton(text='🔙Назад к категориям')
 
     reebok_menu.add(r1, r2, r3)
     reebok_menu.add(r4, r5, r6)
+    reebok_menu.add(r7)
     reebok_menu.add(back)
 
     return reebok_menu

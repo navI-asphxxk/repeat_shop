@@ -121,28 +121,32 @@ def check_callback_data(call):
 
         callback_pages.Reebok.dmx_1200_pages(call)
         callback_pages.Reebok.instapump_fury_pages(call)
+        callback_pages.Reebok.question_low_pages(call)
         callback_pages.Reebok.fluffipuff_pages(call)
         callback_pages.Reebok.dmx_1000_pages(call)
         callback_pages.Reebok.classic_legacy_pages(call)
         callback_pages.Reebok.daytona_dmx_pages(call)
 
-        callback_pages.callback_jordan_air_1_high_pages(call)
-        callback_pages.callback_jordan_air_1_mid_pages(call)
-        callback_pages.callback_jordan_air_1_low_pages(call)
-        callback_pages.callback_jordan_3_retro_pages(call)
-        callback_pages.callback_jordan_4_retro_pages(call)
-        callback_pages.callback_jordan_5_retro_pages(call)
-        callback_pages.callback_jordan_ultra_fly_2_low_pages(call)
+        callback_pages.Jordan.air_1_high_pages(call)
+        callback_pages.Jordan.air_1_mid_pages(call)
+        callback_pages.Jordan.air_1_low_pages(call)
+        callback_pages.Jordan.retro_3_pages(call)
+        callback_pages.Jordan.retro_4_pages(call)
+        callback_pages.Jordan.retro_5_pages(call)
+        callback_pages.Jordan.ultra_fly_2_low_pages(call)
+        callback_pages.Jordan.legacy_312_pages(call)
 
-        callback_pages.callback_converse_aeon_active_pages(call)
-        callback_pages.callback_converse_aeon_active_pages(call)
-        callback_pages.callback_converse_all_star_bb_prototype_pages(call)
-        callback_pages.callback_converse_one_star_pages(call)
-        callback_pages.callback_converse_pro_blaze_strap_pages(call)
+        callback_pages.Converse.aeon_active_pages(call)
+        callback_pages.Converse.aeon_active_pages(call)
+        callback_pages.Converse.all_star_bb_prototype_pages(call)
+        callback_pages.Converse.one_star_pages(call)
+        callback_pages.Converse.pro_blaze_strap_pages(call)
 
-        callback_pages.callback_nb_530_pages(call)
-        callback_pages.callback_nb_725_pages(call)
-        callback_pages.callback_nb_827_pages(call)
+        callback_pages.NewBalance.nb_530_pages(call)
+        callback_pages.NewBalance.nb_725_pages(call)
+        callback_pages.NewBalance.nb_827_pages(call)
+        callback_pages.NewBalance.nb_452_pages(call)
+        callback_pages.NewBalance.nb_327_pages(call)
 
         if call.data == "buy":
             send_to_adm_chat_buy(call)
@@ -312,6 +316,9 @@ def get_text(message):
     if message.text == 'Instapump Fury':
         text_pages.Reebok.instapump_fury_pages(message)
 
+    if message.text == 'Question Low':
+        text_pages.Reebok.question_low_pages(message)
+
     if message.text == 'Fluffipuff':
         text_pages.Reebok.fluffipuff_pages(message)
 
@@ -327,62 +334,62 @@ def get_text(message):
 
 
     if message.text == 'Air Jordan 1 High':
-        text_pages.text_jordan_air_1_high_pages(message)
+        text_pages.Jordan.air_1_high_pages(message)
 
     if message.text == 'Air Jordan 1 Mid':
-        text_pages.text_jordan_air_1_mid_pages(message)
+        text_pages.Jordan.air_1_mid_pages(message)
 
     if message.text == 'Air Jordan 1 Low':
-        text_pages.text_jordan_air_1_low_pages(message)
+        text_pages.Jordan.air_1_low_pages(message)
 
     if message.text == 'Jordan 3 Retro':
-        text_pages.text_jordan_3_retro_pages(message)
+        text_pages.Jordan.retro_3_pages(message)
 
     if message.text == 'Jordan 4 Retro':
-        text_pages.text_jordan_4_retro_pages(message)
+        text_pages.Jordan.retro_4_pages(message)
 
     if message.text == 'Jordan 5 Retro':
-        text_pages.text_jordan_5_retro_pages(message)
+        text_pages.Jordan.retro_5_pages(message)
 
     if message.text == 'Ultra Fly 2 Low':
-        text_pages.text_jordan_ultra_fly_2_low_pages(message)
+        text_pages.Jordan.ultra_fly_2_low_pages(message)
 
     if message.text == 'Legacy 312':
-        text_pages.text_jordan_legacy_312_pages(message)
+        text_pages.Jordan.legacy_312_pages(message)
 
 
 
     if message.text == 'Aeon Active CX':
-        text_pages.text_converse_aeon_active_pages(message)
+        text_pages.Converse.aeon_active_pages(message)
 
     if message.text == 'All Star 1970s':
-        text_pages.text_converse_all_star_1970_pages(message)
+        text_pages.Converse.all_star_1970_pages(message)
 
     if message.text == 'All Star BB Prototype':
-        text_pages.text_converse_all_star_bb_prototype_pages(message)
+        text_pages.Converse.all_star_bb_prototype_pages(message)
 
     if message.text == 'One Star':
-        text_pages.text_converse_one_star_pages(message)
+        text_pages.Converse.one_star_pages(message)
 
     if message.text == 'Pro Blaze Strap':
-        text_pages.text_converse_pro_blaze_strap_pages(message)
+        text_pages.Converse.pro_blaze_strap_pages(message)
 
 
 
     if message.text == 'NB 530':
-        text_pages.text_nb_530_pages(message)
+        text_pages.NewBalance.nb_530_pages(message)
 
     if message.text == 'NB 725':
-        text_pages.text_nb_725_pages(message)
+        text_pages.NewBalance.nb_725_pages(message)
 
     if message.text == 'NB 827':
-        text_pages.text_nb_827_pages(message)
+        text_pages.NewBalance.nb_827_pages(message)
 
     if message.text == 'NB 452':
-        text_pages.text_nb_827_pages(message)
+        text_pages.NewBalance.nb_827_pages(message)
 
     if message.text == 'NB 327':
-        text_pages.text_nb_827_pages(message)
+        text_pages.NewBalance.nb_827_pages(message)
 
 
 bot.polling(none_stop=True)

@@ -9,6 +9,7 @@ import json
 
 bot = telebot.TeleBot(BOT_TOKEN)
 
+
 def callback_pages(call, brand, callback_string, data_price, data_name):
     req = call.data.split('_')
     # Обработка кнопки - скрыть
@@ -66,20 +67,17 @@ def callback_pages(call, brand, callback_string, data_price, data_name):
         # bot.edit_message_text(f' {data.shoes_name_pages[page-1]} ', reply_markup=markup, chat_id=call.message.chat.id,
         #                      message_id=call.message.message_id)
 
-
         bot.edit_message_media(media=telebot.types.InputMedia(type='photo',
-                                                                  media=open(f'pages/{brand}/{callback_string}/{page}.jfif', 'rb'),
-                                                                  caption=f'{data_name[page - 1]}'),
-                                   reply_markup=markup,
-                                   chat_id=call.message.chat.id, message_id=call.message.message_id)
-
+                                                              media=open(f'pages/{brand}/{callback_string}/{page}.jfif',
+                                                                         'rb'),
+                                                              caption=f'{data_name[page - 1]}'),
+                               reply_markup=markup,
+                               chat_id=call.message.chat.id, message_id=call.message.message_id)
 
 
 class Crocs:
     def crocs_pages(call):
         callback_pages(call, 'crocs', 'crocs', data.Crocs.crocs_price, data.Crocs.crocs_name)
-
-
 
 
 class Nike:
@@ -147,7 +145,6 @@ class Adidas:
         callback_pages(call, 'adidas', 'terrex', data.Adidas.terrex_price, data.Adidas.terrex_name)
 
 
-
 class Reebok:
     def dmx_1200_pages(call):
         callback_pages(call, 'reebok', 'dmx1200', data.Reebok.dmx_1200_price, data.Reebok.dmx_1200_name)
@@ -155,6 +152,10 @@ class Reebok:
     def instapump_fury_pages(call):
         callback_pages(call, 'reebok', 'instapumpFury', data.Reebok.instapump_fury_price,
                        data.Reebok.instapump_fury_name)
+
+    def question_low_pages(call):
+        callback_pages(call, 'reebok', 'questionLow', data.Reebok.question_low_price,
+                       data.Reebok.question_low_name)
 
     def fluffipuff_pages(call):
         callback_pages(call, 'reebok', 'fluffipuff', data.Reebok.fluffipuff_price, data.Reebok.fluffipuff_name)
@@ -170,66 +171,66 @@ class Reebok:
         callback_pages(call, 'reebok', 'daytonaDmx', data.Reebok.daytona_dmx_price, data.Reebok.daytona_dmx_name)
 
 
+class Jordan:
+    def air_1_high_pages(call):
+        callback_pages(call, 'jordan', 'air1high', data.Jordan.air1_high_price, data.Jordan.air1_high_name)
 
-def callback_jordan_air_1_high_pages(call):
-    callback_pages(call, 'jordan', 'air1high', data.jordan_1_high_price, data.jordan_1_high_name)
+    def air_1_mid_pages(call):
+        callback_pages(call, 'jordan', 'air1mid', data.Jordan.air1_mid_price, data.Jordan.air1_mid_name)
 
-def callback_jordan_air_1_mid_pages(call):
-    callback_pages(call, 'jordan', 'air1mid', data.jordan_1_mid_price, data.jordan_1_mid_name)
+    def air_1_low_pages(call):
+        callback_pages(call, 'jordan', 'air1low', data.Jordan.air1_low_price, data.Jordan.air1_low_name)
 
-def callback_jordan_air_1_low_pages(call):
-    callback_pages(call, 'jordan', 'air1low', data.jordan_1_low_price, data.jordan_1_low_name)
+    def retro_3_pages(call):
+        callback_pages(call, 'jordan', '3retro', data.Jordan.retro3_price, data.Jordan.retro3_name)
 
-def callback_jordan_3_retro_pages(call):
-    callback_pages(call, 'jordan', '3retro', data.jordan_3_retro_price, data.jordan_3_retro_name)
+    def retro_4_pages(call):
+        callback_pages(call, 'jordan', '4retro', data.Jordan.retro4_price, data.Jordan.retro4_name)
 
-def callback_jordan_4_retro_pages(call):
-    callback_pages(call, 'jordan', '4retro', data.jordan_4_retro_price, data.jordan_4_retro_name)
+    def retro_5_pages(call):
+        callback_pages(call, 'jordan', '5retro', data.Jordan.retro5_price, data.Jordan.retro5_name)
 
-def callback_jordan_5_retro_pages(call):
-    callback_pages(call, 'jordan', '5retro', data.jordan_5_retro_price, data.jordan_5_retro_name)
+    def ultra_fly_2_low_pages(call):
+        callback_pages(call, 'jordan', 'ultraFly2low', data.Jordan.ultrafly_2_low_price,
+                       data.Jordan.ultrafly_2_low_name)
 
-def callback_jordan_ultra_fly_2_low_pages(call):
-    callback_pages(call, 'jordan', 'ultraFly2low', data.jordan_ultrafly_2_low_price,
-                                                      data.jordan_ultrafly_2_low_name)
-
-def callback_jordan_legacy_312_pages(call):
-    callback_pages(call, 'jordan', 'legacy312', data.jordan_legacy_312_price, data.jordan_legacy_312_name)
-
-
-
-def callback_converse_aeon_active_pages(call):
-    callback_pages(call, 'converse', 'aeonActiveCX', data.converse_aeon_active_cx_price,
-                                                     data.converse_aeon_active_cx_name)
-
-def callback_converse_all_star_1970_pages(call):
-    callback_pages(call, 'converse', 'allStar1970', data.converse_all_star_1970_price, data.converse_all_star_1970_name)
-
-def callback_converse_all_star_bb_prototype_pages(call):
-    callback_pages(call, 'converse', 'allStarBBPrototype', data.converse_all_star_bb_prototype_price,
-                                                           data.converse_all_star_bb_prototype_name)
-
-def callback_converse_one_star_pages(call):
-    callback_pages(call, 'converse', 'oneStar', data.converse_one_star_price, data.converse_one_star_name)
-
-def callback_converse_pro_blaze_strap_pages(call):
-    callback_pages(call, 'converse', 'proBlazeStrap', data.converse_pro_blaze_strap_price,
-                                                      data.converse_pro_blaze_strap_name)
+    def legacy_312_pages(call):
+        callback_pages(call, 'jordan', 'legacy312', data.Jordan.legacy_312_price, data.Jordan.legacy_312_name)
 
 
+class Converse:
+    def aeon_active_pages(call):
+        callback_pages(call, 'converse', 'aeonActiveCX', data.Converse.aeon_active_cx_price,
+                       data.Converse.aeon_active_cx_name)
 
-def callback_nb_530_pages(call):
-    callback_pages(call, 'new balance', 'nb530', data.nb_530_price, data.nb_530_name)
+    def all_star_1970_pages(call):
+        callback_pages(call, 'converse', 'allStar1970', data.Converse.all_star_1970_price,
+                       data.Converse.all_star_1970_name)
 
-def callback_nb_725_pages(call):
-    callback_pages(call, 'new balance', 'nb725', data.nb_725_price, data.nb_725_name)
+    def all_star_bb_prototype_pages(call):
+        callback_pages(call, 'converse', 'allStarBBPrototype', data.Converse.all_star_bb_prototype_price,
+                       data.Converse.all_star_bb_prototype_name)
 
-def callback_nb_827_pages(call):
-    callback_pages(call, 'new balance', 'nb827', data.nb_827_price, data.nb_827_name)
+    def one_star_pages(call):
+        callback_pages(call, 'converse', 'oneStar', data.Converse.one_star_price, data.Converse.one_star_name)
 
-def callback_nb_452_pages(call):
-    callback_pages(call, 'new balance', 'nb452', data.nb_452_price, data.nb_452_name)
+    def pro_blaze_strap_pages(call):
+        callback_pages(call, 'converse', 'proBlazeStrap', data.Converse.pro_blaze_strap_price,
+                       data.Converse.pro_blaze_strap_name)
 
-def callback_nb_327_pages(call):
-    callback_pages(call, 'new balance', 'nb327', data.nb_327_price, data.nb_327_name)
 
+class NewBalance:
+    def nb_530_pages(call):
+        callback_pages(call, 'new balance', 'nb530', data.NewBalance.nb_530_price, data.NewBalance.nb_530_name)
+
+    def nb_725_pages(call):
+        callback_pages(call, 'new balance', 'nb725', data.NewBalance.nb_725_price, data.NewBalance.nb_725_name)
+
+    def nb_827_pages(call):
+        callback_pages(call, 'new balance', 'nb827', data.NewBalance.nb_827_price, data.NewBalance.nb_827_name)
+
+    def nb_452_pages(call):
+        callback_pages(call, 'new balance', 'nb452', data.NewBalance.nb_452_price, data.NewBalance.nb_452_name)
+
+    def nb_327_pages(call):
+        callback_pages(call, 'new balance', 'nb327', data.NewBalance.nb_327_price, data.NewBalance.nb_327_name)

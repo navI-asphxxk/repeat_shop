@@ -37,7 +37,6 @@ class Crocs:
         text_pages(message, 'crocs', 'crocs', data.Crocs.crocs_price, data.Crocs.crocs_name)
 
 
-
 class Nike:
     def force_pages(message):
         text_pages(message, 'nike', 'force', data.Nike.force_price, data.Nike.force_name)
@@ -68,7 +67,6 @@ class Nike:
 
     def air720_pages(message):
         text_pages(message, 'nike', 'air720', data.Nike.air720_price, data.Nike.air720_name)
-
 
 
 class Adidas:
@@ -104,7 +102,6 @@ class Adidas:
         text_pages(message, 'adidas', 'terrex', data.Adidas.terrex_price, data.Adidas.terrex_name)
 
 
-
 class Reebok:
     def dmx_1200_pages(message):
         text_pages(message, 'reebok', 'dmx1200', data.Reebok.dmx_1200_price, data.Reebok.dmx_1200_name)
@@ -112,6 +109,10 @@ class Reebok:
     def instapump_fury_pages(message):
         text_pages(message, 'reebok', 'instapumpFury', data.Reebok.instapump_fury_price,
                    data.Reebok.instapump_fury_name)
+
+    def question_low_pages(message):
+        text_pages(message, 'reebok', 'questionLow', data.Reebok.question_low_price,
+                   data.Reebok.question_low_name)
 
     def fluffipuff_pages(message):
         text_pages(message, 'reebok', 'fluffipuff', data.Reebok.fluffipuff_price, data.Reebok.fluffipuff_name)
@@ -127,65 +128,66 @@ class Reebok:
         text_pages(message, 'reebok', 'daytonaDmx', data.Reebok.daytona_dmx_price, data.Reebok.daytona_dmx_name)
 
 
+class Jordan:
+    def air_1_high_pages(message):
+        text_pages(message, 'jordan', 'air1high', data.Jordan.air1_high_price, data.Jordan.air1_high_name)
 
-def text_jordan_air_1_high_pages(message):
-    text_pages(message, 'jordan', 'air1high', data.jordan_1_high_price, data.jordan_1_high_name)
+    def air_1_mid_pages(message):
+        text_pages(message, 'jordan', 'air1mid', data.Jordan.air1_mid_price, data.Jordan.air1_mid_name)
 
-def text_jordan_air_1_mid_pages(message):
-    text_pages(message, 'jordan', 'air1mid', data.jordan_1_mid_price, data.jordan_1_mid_name)
+    def air_1_low_pages(message):
+        text_pages(message, 'jordan', 'air1low', data.Jordan.air1_low_price, data.Jordan.air1_low_name)
 
-def text_jordan_air_1_low_pages(message):
-    text_pages(message, 'jordan', 'air1low', data.jordan_1_low_price, data.jordan_1_low_name)
+    def retro_3_pages(message):
+        text_pages(message, 'jordan', '3retro', data.Jordan.retro3_price, data.Jordan.retro3_name)
 
-def text_jordan_3_retro_pages(message):
-    text_pages(message, 'jordan', '3retro', data.jordan_3_retro_price, data.jordan_3_retro_name)
+    def retro_4_pages(message):
+        text_pages(message, 'jordan', '4retro', data.Jordan.retro4_price, data.Jordan.retro4_name)
 
-def text_jordan_4_retro_pages(message):
-    text_pages(message, 'jordan', '4retro', data.jordan_4_retro_price, data.jordan_4_retro_name)
+    def retro_5_pages(message):
+        text_pages(message, 'jordan', '5retro', data.Jordan.retro5_price, data.Jordan.retro5_name)
 
-def text_jordan_5_retro_pages(message):
-    text_pages(message, 'jordan', '5retro', data.jordan_5_retro_price, data.jordan_5_retro_name)
+    def ultra_fly_2_low_pages(message):
+        text_pages(message, 'jordan', 'ultraFly2low', data.Jordan.ultrafly_2_low_price,
+                   data.Jordan.ultrafly_2_low_name)
 
-def text_jordan_ultra_fly_2_low_pages(message):
-    text_pages(message, 'jordan', 'ultraFly2low', data.jordan_ultrafly_2_low_price,
-                                                      data.jordan_ultrafly_2_low_name)
-
-def text_jordan_legacy_312_pages(message):
-    text_pages(message, 'jordan', 'legacy312', data.jordan_legacy_312_price, data.jordan_legacy_312_name)
-
-
-
-def text_converse_aeon_active_pages(message):
-    text_pages(message, 'converse', 'aeonActiveCX', data.converse_aeon_active_cx_price,
-                                                    data.converse_aeon_active_cx_name)
-
-def text_converse_all_star_1970_pages(message):
-    text_pages(message, 'converse', 'allStar1970', data.converse_all_star_1970_price, data.converse_all_star_1970_name)
-
-def text_converse_all_star_bb_prototype_pages(message):
-    text_pages(message, 'converse', 'allStarBBPrototype', data.converse_all_star_bb_prototype_price,
-                                                          data.converse_all_star_bb_prototype_name)
-
-def text_converse_one_star_pages(message):
-    text_pages(message, 'converse', 'oneStar', data.converse_one_star_price, data.converse_one_star_name)
-
-def text_converse_pro_blaze_strap_pages(message):
-    text_pages(message, 'converse', 'proBlazeStrap', data.converse_pro_blaze_strap_price,
-                                                      data.converse_pro_blaze_strap_name)
+    def legacy_312_pages(message):
+        text_pages(message, 'jordan', 'legacy312', data.Jordan.legacy_312_price, data.Jordan.legacy_312_name)
 
 
+class Converse:
+    def aeon_active_pages(message):
+        text_pages(message, 'converse', 'aeonActiveCX', data.Converse.aeon_active_cx_price,
+                   data.Converse.aeon_active_cx_name)
 
-def text_nb_530_pages(message):
-    text_pages(message, 'new balance', 'nb530', data.nb_530_price, data.nb_530_name)
+    def all_star_1970_pages(message):
+        text_pages(message, 'converse', 'allStar1970', data.Converse.all_star_1970_price,
+                   data.Converse.all_star_1970_name)
 
-def text_nb_725_pages(message):
-    text_pages(message, 'new balance', 'nb725', data.nb_725_price, data.nb_725_name)
+    def all_star_bb_prototype_pages(message):
+        text_pages(message, 'converse', 'allStarBBPrototype', data.Converse.all_star_bb_prototype_price,
+                   data.Converse.all_star_bb_prototype_name)
 
-def text_nb_827_pages(message):
-    text_pages(message, 'new balance', 'nb827', data.nb_827_price, data.nb_827_name)
+    def one_star_pages(message):
+        text_pages(message, 'converse', 'oneStar', data.Converse.one_star_price, data.Converse.one_star_name)
 
-def text_nb_452_pages(message):
-    text_pages(message, 'new balance', 'nb452', data.nb_452_price, data.nb_452_name)
+    def pro_blaze_strap_pages(message):
+        text_pages(message, 'converse', 'proBlazeStrap', data.Converse.pro_blaze_strap_price,
+                   data.Converse.pro_blaze_strap_name)
 
-def text_nb_327_pages(message):
-    text_pages(message, 'new balance', 'nb327', data.nb_327_price, data.nb_327_name)
+
+class NewBalance:
+    def nb_530_pages(message):
+        text_pages(message, 'new balance', 'nb530', data.NewBalance.nb_530_price, data.NewBalance.nb_530_name)
+
+    def nb_725_pages(message):
+        text_pages(message, 'new balance', 'nb725', data.NewBalance.nb_725_price, data.NewBalance.nb_725_name)
+
+    def nb_827_pages(message):
+        text_pages(message, 'new balance', 'nb827', data.NewBalance.nb_827_price, data.NewBalance.nb_827_name)
+
+    def nb_452_pages(message):
+        text_pages(message, 'new balance', 'nb452', data.NewBalance.nb_452_price, data.NewBalance.nb_452_name)
+
+    def nb_327_pages(message):
+        text_pages(message, 'new balance', 'nb327', data.NewBalance.nb_327_price, data.NewBalance.nb_327_name)
