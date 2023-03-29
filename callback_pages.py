@@ -148,23 +148,26 @@ class Adidas:
 
 
 
-def callback_reebok_dmx_1200_pages(call):
-    callback_pages(call, 'reebok', 'dmx1200', data.reebok_dmx_1200_price, data.reebok_dmx_1200_name)
+class Reebok:
+    def dmx_1200_pages(call):
+        callback_pages(call, 'reebok', 'dmx1200', data.Reebok.dmx_1200_price, data.Reebok.dmx_1200_name)
 
-def callback_reebok_instapump_fury_pages(call):
-    callback_pages(call, 'reebok', 'instapumpFury', data.reebok_instapump_fury_price, data.reebok_instapump_fury_name)
+    def instapump_fury_pages(call):
+        callback_pages(call, 'reebok', 'instapumpFury', data.Reebok.instapump_fury_price,
+                       data.Reebok.instapump_fury_name)
 
-def callback_reebok_fluffipuff_pages(call):
-    callback_pages(call, 'reebok', 'fluffipuff', data.reebok_fluffipuff_price, data.reebok_fluffipuff_name)
+    def fluffipuff_pages(call):
+        callback_pages(call, 'reebok', 'fluffipuff', data.Reebok.fluffipuff_price, data.Reebok.fluffipuff_name)
 
-def callback_reebok_dmx_1000_pages(call):
-    callback_pages(call, 'reebok', 'dmx1000', data.reebok_dmx_1000_price, data.reebok_dmx_1000_name)
+    def dmx_1000_pages(call):
+        callback_pages(call, 'reebok', 'dmx1000', data.Reebok.dmx_1000_price, data.Reebok.dmx_1000_name)
 
-def callback_reebok_classic_legacy_pages(call):
-    callback_pages(call, 'reebok', 'classicLegacy', data.reebok_classic_legacy_price, data.reebok_classic_legacy_name)
+    def classic_legacy_pages(call):
+        callback_pages(call, 'reebok', 'classicLegacy', data.Reebok.classic_legacy_price,
+                       data.Reebok.classic_legacy_name)
 
-def callback_reebok_daytona_dmx_pages(call):
-    callback_pages(call, 'reebok', 'daytonaDmx', data.reebok_daytona_dmx_price, data.reebok_daytona_dmx_name)
+    def daytona_dmx_pages(call):
+        callback_pages(call, 'reebok', 'daytonaDmx', data.Reebok.daytona_dmx_price, data.Reebok.daytona_dmx_name)
 
 
 

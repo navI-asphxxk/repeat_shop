@@ -179,30 +179,31 @@ class Adidas:
 
 
 
-REEBOK = None
-reebok_dmx_1200_price = []
+class Reebok:
+    dmx_1200_price = []
 
-reebok_dmx_1200_name = []
+    dmx_1200_name = []
 
-reebok_instapump_fury_price = []
+    instapump_fury_price = []
 
-reebok_instapump_fury_name = []
+    instapump_fury_name = []
 
-reebok_fluffipuff_price = []
+    fluffipuff_price = []
 
-reebok_fluffipuff_name = []
+    fluffipuff_name = []
 
-reebok_dmx_1000_price = []
+    dmx_1000_price = []
 
-reebok_dmx_1000_name = []
+    dmx_1000_name = []
 
-reebok_classic_legacy_price = []
+    classic_legacy_price = []
 
-reebok_classic_legacy_name = []
+    classic_legacy_name = []
 
-reebok_daytona_dmx_price = []
+    daytona_dmx_price = []
 
-reebok_daytona_dmx_name = []
+    daytona_dmx_name = []
+
 
 
 

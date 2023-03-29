@@ -105,23 +105,26 @@ class Adidas:
 
 
 
-def text_reebok_dmx_1200_pages(message):
-    text_pages(message, 'reebok', 'dmx1200', data.reebok_dmx_1200_price, data.reebok_dmx_1200_name)
+class Reebok:
+    def dmx_1200_pages(message):
+        text_pages(message, 'reebok', 'dmx1200', data.Reebok.dmx_1200_price, data.Reebok.dmx_1200_name)
 
-def text_reebok_instapump_fury_pages(message):
-    text_pages(message, 'reebok', 'instapumpFury', data.reebok_instapump_fury_price, data.reebok_instapump_fury_name)
+    def instapump_fury_pages(message):
+        text_pages(message, 'reebok', 'instapumpFury', data.Reebok.instapump_fury_price,
+                   data.Reebok.instapump_fury_name)
 
-def text_reebok_fluffipuff_pages(message):
-    text_pages(message, 'reebok', 'fluffipuff', data.reebok_fluffipuff_price, data.reebok_fluffipuff_name)
+    def fluffipuff_pages(message):
+        text_pages(message, 'reebok', 'fluffipuff', data.Reebok.fluffipuff_price, data.Reebok.fluffipuff_name)
 
-def text_reebok_dmx_1000_pages(message):
-    text_pages(message, 'reebok', 'dmx1000', data.reebok_dmx_1000_price, data.reebok_dmx_1000_name)
+    def dmx_1000_pages(message):
+        text_pages(message, 'reebok', 'dmx1000', data.Reebok.dmx_1000_price, data.Reebok.dmx_1000_name)
 
-def text_reebok_classic_legacy_pages(message):
-    text_pages(message, 'reebok', 'classicLegacy', data.reebok_classic_legacy_price, data.reebok_classic_legacy_name)
+    def classic_legacy_pages(message):
+        text_pages(message, 'reebok', 'classicLegacy', data.Reebok.classic_legacy_price,
+                   data.Reebok.classic_legacy_name)
 
-def text_reebok_daytona_dmx_pages(message):
-    text_pages(message, 'reebok', 'daytonaDmx', data.reebok_daytona_dmx_price, data.reebok_daytona_dmx_name)
+    def daytona_dmx_pages(message):
+        text_pages(message, 'reebok', 'daytonaDmx', data.Reebok.daytona_dmx_price, data.Reebok.daytona_dmx_name)
 
 
 

@@ -108,23 +108,23 @@ def check_callback_data(call):
         callback_pages.Nike.air95_pages(call)
         callback_pages.Nike.air720_pages(call)
 
-        callback_pages.callback_adidas_forum_low_pages(call)
-        callback_pages.callback_adidas_ozweego_pages(call)
-        callback_pages.callback_adidas_yeezy_boost_350_pages(call)
-        callback_pages.callback_adidas_ozelia_pages(call)
-        callback_pages.callback_adidas_niteball_pages(call)
-        callback_pages.callback_adidas_falcon_pages(call)
-        callback_pages.callback_adidas_superstar_pages(call)
-        callback_pages.callback_adidas_stan_smith_pages(call)
-        callback_pages.callback_adidas_supercourt_pages(call)
-        callback_pages.callback_adidas_terrex_pages(call)
+        callback_pages.Adidas.forum_low_pages(call)
+        callback_pages.Adidas.ozweego_pages(call)
+        callback_pages.Adidas.yeezy_boost_350_pages(call)
+        callback_pages.Adidas.ozelia_pages(call)
+        callback_pages.Adidas.niteball_pages(call)
+        callback_pages.Adidas.falcon_pages(call)
+        callback_pages.Adidas.superstar_pages(call)
+        callback_pages.Adidas.stan_smith_pages(call)
+        callback_pages.Adidas.supercourt_pages(call)
+        callback_pages.Adidas.terrex_pages(call)
 
-        callback_pages.callback_reebok_dmx_1200_pages(call)
-        callback_pages.callback_reebok_instapump_fury_pages(call)
-        callback_pages.callback_reebok_fluffipuff_pages(call)
-        callback_pages.callback_reebok_dmx_1000_pages(call)
-        callback_pages.callback_reebok_classic_legacy_pages(call)
-        callback_pages.callback_reebok_daytona_dmx_pages(call)
+        callback_pages.Reebok.dmx_1200_pages(call)
+        callback_pages.Reebok.instapump_fury_pages(call)
+        callback_pages.Reebok.fluffipuff_pages(call)
+        callback_pages.Reebok.dmx_1000_pages(call)
+        callback_pages.Reebok.classic_legacy_pages(call)
+        callback_pages.Reebok.daytona_dmx_pages(call)
 
         callback_pages.callback_jordan_air_1_high_pages(call)
         callback_pages.callback_jordan_air_1_mid_pages(call)
@@ -307,22 +307,22 @@ def get_text(message):
 
 
     if message.text == 'DMX Series 1200':
-        text_pages.text_reebok_dmx_1200_pages(message)
+        text_pages.Reebok.dmx_1200_pages(message)
 
     if message.text == 'Instapump Fury':
-        text_pages.text_reebok_instapump_fury_pages(message)
+        text_pages.Reebok.instapump_fury_pages(message)
 
     if message.text == 'Fluffipuff':
-        text_pages.text_reebok_fluffipuff_pages(message)
+        text_pages.Reebok.fluffipuff_pages(message)
 
     if message.text == 'DMX Series 1000':
-        text_pages.text_reebok_dmx_1000_pages(message)
+        text_pages.Reebok.dmx_1000_pages(message)
 
     if message.text == 'Classic Legacy':
-        text_pages.text_reebok_classic_legacy_pages(message)
+        text_pages.Reebok.classic_legacy_pages(message)
 
     if message.text == 'Daytona DMX':
-        text_pages.text_reebok_daytona_dmx_pages(message)
+        text_pages.Reebok.daytona_dmx_pages(message)
 
 
 
