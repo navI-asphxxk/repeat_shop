@@ -95,18 +95,18 @@ def check_callback_data(call):
             bot.delete_message(call.message.chat.id, call.message.message_id - 1)
             bot.send_message(call.message.chat.id, text='cancel', parse_mode='html', reply_markup=keyboard_menu)
 
-        callback_pages.callback_crocs_pages(call)
+        callback_pages.Crocs.crocs_pages(call)
 
-        callback_pages.callback_nike_force_pages(call)
-        callback_pages.callback_nike_dunk_high_pages(call)
-        callback_pages.callback_nike_dunk_low_pages(call)
-        callback_pages.callback_nike_monarch_pages(call)
-        callback_pages.callback_nike_m2k_pages(call)
-        callback_pages.callback_nike_plus_pages(call)
-        callback_pages.callback_nike_vapormax_pages(call)
-        callback_pages.callback_nike_air97_pages(call)
-        callback_pages.callback_nike_air95_pages(call)
-        callback_pages.callback_nike_air720_pages(call)
+        callback_pages.Nike.force_pages(call)
+        callback_pages.Nike.dunk_high_pages(call)
+        callback_pages.Nike.dunk_low_pages(call)
+        callback_pages.Nike.monarch_pages(call)
+        callback_pages.Nike.m2k_pages(call)
+        callback_pages.Nike.plus_pages(call)
+        callback_pages.Nike.vapormax_pages(call)
+        callback_pages.Nike.air97_pages(call)
+        callback_pages.Nike.air95_pages(call)
+        callback_pages.Nike.air720_pages(call)
 
         callback_pages.callback_adidas_forum_low_pages(call)
         callback_pages.callback_adidas_ozweego_pages(call)
@@ -235,74 +235,74 @@ def get_text(message):
 
 
     if message.text == '🐤Crocs':
-        text_pages.text_crocs_pages(message)
+        text_pages.Crocs.crocs_pages(message)
 
 
 
     if message.text == 'Air Force 1 Low':
-        text_pages.text_nike_force_pages(message)
+        text_pages.Nike.force_pages(message)
 
     if message.text == 'Dunk High':
-        text_pages.text_nike_dunk_high_pages(message)
+        text_pages.Nike.dunk_high_pages(message)
 
     if message.text == 'Dunk Low':
-        text_pages.text_nike_dunk_low_pages(message)
+        text_pages.Nike.dunk_low_pages(message)
 
     if message.text == 'Air Monarch':
-        text_pages.text_nike_monarch_pages(message)
+        text_pages.Nike.monarch_pages(message)
 
     if message.text == 'Air M2K Tekno':
-        text_pages.text_nike_m2k_pages(message)
+        text_pages.Nike.m2k_pages(message)
 
     if message.text == 'Air Max Plus':
-        text_pages.text_nike_plus_pages(message)
+        text_pages.Nike.plus_pages(message)
 
     if message.text == 'Air Vapormax':
-        text_pages.text_nike_vapormax_pages(message)
+        text_pages.Nike.vapormax_pages(message)
 
     if message.text == 'Air Vapormax':
-        text_pages.text_nike_vapormax_pages(message)
+        text_pages.Nike.vapormax_pages(message)
 
     if message.text == 'Air Max 97':
-        text_pages.text_nike_air97_pages(message)
+        text_pages.Nike.air97_pages(message)
 
     if message.text == 'Air Max 95':
-        text_pages.text_nike_air95_pages(message)
+        text_pages.Nike.air95_pages(message)
 
     if message.text == 'Air Max 720':
-        text_pages.text_nike_air720_pages(message)
+        text_pages.Nike.air720_pages(message)
 
 
 
     if message.text == 'Forum Low':
-        text_pages.text_adidas_forum_low_pages(message)
+        text_pages.Adidas.forum_low_pages(message)
 
     if message.text == 'Ozweego':
-        text_pages.text_adidas_ozweego_pages(message)
+        text_pages.Adidas.ozweego_pages(message)
 
     if message.text == 'Yeezy Boost 350':
-        text_pages.text_adidas_yeezy_boost_350_pages(message)
+        text_pages.Adidas.yeezy_boost_350_pages(message)
 
     if message.text == 'Ozelia':
-        text_pages.text_adidas_ozelia_pages(message)
+        text_pages.Adidas.ozelia_pages(message)
 
     if message.text == 'Niteball':
-        text_pages.text_adidas_niteball_pages(message)
+        text_pages.Adidas.niteball_pages(message)
 
     if message.text == 'Falcon':
-        text_pages.text_adidas_falcon_pages(message)
+        text_pages.Adidas.falcon_pages(message)
 
     if message.text == 'Superstar':
-        text_pages.text_adidas_superstar_pages(message)
+        text_pages.Adidas.superstar_pages(message)
 
     if message.text == 'Stan Smith':
-        text_pages.text_adidas_stan_smith_pages(message)
+        text_pages.Adidas.stan_smith_pages(message)
 
     if message.text == 'Supercourt':
-        text_pages.text_adidas_supercourt_pages(message)
+        text_pages.Adidas.supercourt_pages(message)
 
     if message.text == 'Terrex':
-        text_pages.text_adidas_terrex_pages(message)
+        text_pages.Adidas.terrex_pages(message)
 
 
 

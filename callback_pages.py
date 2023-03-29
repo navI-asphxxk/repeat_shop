@@ -75,73 +75,76 @@ def callback_pages(call, brand, callback_string, data_price, data_name):
 
 
 
-def callback_crocs_pages(call):
-    callback_pages(call, 'crocs', 'crocs', data.crocs_price_pages, data.crocs_name_pages)
+class Crocs:
+    def crocs_pages(call):
+        callback_pages(call, 'crocs', 'crocs', data.Crocs.crocs_price, data.Crocs.crocs_name)
 
 
 
-def callback_nike_force_pages(call):
-    callback_pages(call, 'nike', 'force', data.nike_force_price_pages, data.nike_force_name_pages)
 
-def callback_nike_dunk_high_pages(call):
-    callback_pages(call, 'nike', 'dunkHigh', data.nike_dunk_high_price_pages, data.nike_dunk_high_name_pages)
+class Nike:
+    def force_pages(call):
+        callback_pages(call, 'nike', 'force', data.Nike.force_price, data.Nike.force_name)
 
-def callback_nike_dunk_low_pages(call):
-    callback_pages(call, 'nike', 'dunkLow', data.nike_dunk_low_price_pages, data.nike_dunk_low_name_pages)
+    def dunk_high_pages(call):
+        callback_pages(call, 'nike', 'dunkHigh', data.Nike.dunk_high_price, data.Nike.dunk_high_name)
 
-def callback_nike_monarch_pages(call):
-    callback_pages(call, 'nike', 'monarch', data.nike_monarch_price_pages, data.nike_monarch_name_pages)
+    def dunk_low_pages(call):
+        callback_pages(call, 'nike', 'dunkLow', data.Nike.dunk_low_price, data.Nike.dunk_low_name)
 
-def callback_nike_m2k_pages(call):
-    callback_pages(call, 'nike', 'm2k', data.nike_m2k_price_pages, data.nike_m2k_name_pages)
+    def monarch_pages(call):
+        callback_pages(call, 'nike', 'monarch', data.Nike.monarch_price, data.Nike.monarch_name)
 
-def callback_nike_plus_pages(call):
-    callback_pages(call, 'nike', 'plus', data.nike_plus_price_pages, data.nike_plus_name_pages)
+    def m2k_pages(call):
+        callback_pages(call, 'nike', 'm2k', data.Nike.m2k_price, data.Nike.m2k_name)
 
-def callback_nike_vapormax_pages(call):
-    callback_pages(call, 'nike', 'vapormax', data.nike_vapormax_price_pages, data.nike_vapormax_name_pages)
+    def plus_pages(call):
+        callback_pages(call, 'nike', 'plus', data.Nike.plus_price, data.Nike.plus_name)
 
-def callback_nike_air97_pages(call):
-    callback_pages(call, 'nike', 'air97', data.nike_97_price_pages, data.nike_97_name_pages)
+    def vapormax_pages(call):
+        callback_pages(call, 'nike', 'vapormax', data.Nike.vapormax_price, data.Nike.vapormax_name)
 
-def callback_nike_air95_pages(call):
-    callback_pages(call, 'nike', 'air95', data.nike_95_price_pages, data.nike_95_name_pages)
+    def air97_pages(call):
+        callback_pages(call, 'nike', 'air97', data.Nike.air97_price, data.Nike.air97_name)
 
-def callback_nike_air720_pages(call):
-    callback_pages(call, 'nike', 'air720', data.nike_720_price_pages, data.nike_720_name_pages)
+    def air95_pages(call):
+        callback_pages(call, 'nike', 'air95', data.Nike.air95_price, data.Nike.air95_name)
+
+    def air720_pages(call):
+        callback_pages(call, 'nike', 'air720', data.Nike.air720_price, data.Nike.air720_name)
 
 
+class Adidas:
+    def forum_low_pages(call):
+        callback_pages(call, 'adidas', 'forumLow', data.Adidas.forum_low_price, data.Adidas.forum_low_name)
 
-def callback_adidas_forum_low_pages(call):
-    callback_pages(call, 'adidas', 'forumLow', data.adidas_forum_low_price, data.adidas_forum_low_name)
+    def ozweego_pages(call):
+        callback_pages(call, 'adidas', 'ozweego', data.Adidas.ozweego_price, data.Adidas.ozweego_name)
 
-def callback_adidas_ozweego_pages(call):
-    callback_pages(call, 'adidas', 'ozweego', data.adidas_ozweego_price, data.adidas_ozweego_name)
+    def yeezy_boost_350_pages(call):
+        callback_pages(call, 'adidas', 'yeezyBoost350', data.Adidas.yeezy_boost_350_price,
+                       data.Adidas.yeezy_boost_350_name)
 
-def callback_adidas_yeezy_boost_350_pages(call):
-    callback_pages(call, 'adidas', 'yeezyBoost350', data.adidas_yeezy_boost_350_price,
-                                                      data.adidas_yeezy_boost_350_name)
+    def ozelia_pages(call):
+        callback_pages(call, 'adidas', 'ozelia', data.Adidas.ozelia_price, data.Adidas.ozelia_name)
 
-def callback_adidas_ozelia_pages(call):
-    callback_pages(call, 'adidas', 'ozelia', data.adidas_ozelia_price, data.adidas_ozelia_name)
+    def niteball_pages(call):
+        callback_pages(call, 'adidas', 'niteball', data.Adidas.niteball_price, data.Adidas.niteball_name)
 
-def callback_adidas_niteball_pages(call):
-    callback_pages(call, 'adidas', 'niteball', data.adidas_niteball_price, data.adidas_niteball_name)
+    def falcon_pages(call):
+        callback_pages(call, 'adidas', 'falcon', data.Adidas.falcon_price, data.Adidas.falcon_name)
 
-def callback_adidas_falcon_pages(call):
-    callback_pages(call, 'adidas', 'falcon', data.adidas_falcon_price, data.adidas_falcon_name)
+    def superstar_pages(call):
+        callback_pages(call, 'adidas', 'superstar', data.Adidas.superstar_price, data.Adidas.superstar_name)
 
-def callback_adidas_superstar_pages(call):
-    callback_pages(call, 'adidas', 'superstar', data.adidas_superstar_price, data.adidas_superstar_name)
+    def stan_smith_pages(call):
+        callback_pages(call, 'adidas', 'stanSmith', data.Adidas.stan_smith_price, data.Adidas.stan_smith_name)
 
-def callback_adidas_stan_smith_pages(call):
-    callback_pages(call, 'adidas', 'stanSmith', data.adidas_stan_smith_price, data.adidas_stan_smith_name)
+    def supercourt_pages(call):
+        callback_pages(call, 'adidas', 'supercourt', data.Adidas.supercourt_price, data.Adidas.supercourt_name)
 
-def callback_adidas_supercourt_pages(call):
-    callback_pages(call, 'adidas', 'supercourt', data.adidas_supercourt_price, data.adidas_supercourt_name)
-
-def callback_adidas_terrex_pages(call):
-    callback_pages(call, 'adidas', 'terrex', data.adidas_terrex_price, data.adidas_terrex_name)
+    def terrex_pages(call):
+        callback_pages(call, 'adidas', 'terrex', data.Adidas.terrex_price, data.Adidas.terrex_name)
 
 
 
